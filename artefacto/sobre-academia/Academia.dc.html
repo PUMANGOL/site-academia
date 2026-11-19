@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<title>A Academia — Academia Pumangol</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF}
+a{color:#10505C}a:hover{color:#0B3B45}
+h1,h2,h3,.disp{font-family:'Bricolage Grotesque','Figtree',system-ui,sans-serif;font-optical-sizing:auto}
+.fld{width:100%;box-sizing:border-box;height:54px;border:1px solid #D5E0DC;border-radius:14px;padding:0 18px;font:inherit;font-size:15px;color:#10505C;background:#fff;transition:border-color .2s,box-shadow .2s}
+.fld:focus{outline:none;border-color:#10505C;box-shadow:0 0 0 4px rgba(112,168,76,0.28)}
+.fld-d{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.18);color:#fff}
+.fld-d::placeholder{color:#9DB8B4}
+.lbl{display:block;font-size:13px;font-weight:700;color:#3C5A62;margin:0 0 8px 2px}
+.btn{transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(16,80,92,0.18)}
+.btn-g:hover{background:#80B85A !important}
+.nl{position:relative;text-decoration:none;font-weight:600;font-size:15px;padding:10px 2px;color:#10505C}
+.nl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:#70A84C;transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.nl:hover::after,.nl.on::after{transform:scaleX(1)}
+.lift{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.lift:hover{transform:translateY(-8px);box-shadow:0 28px 56px rgba(16,80,92,0.14)}
+.zoom img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.zoom:hover img{transform:scale(1.06)}
+.arrow{transition:transform .3s ease}
+a:hover .arrow,button:hover .arrow{transform:translateX(4px)}
+.stack{position:relative;z-index:2;border-radius:48px 48px 0 0;margin-top:-48px}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:scaleY(0.15)}to{opacity:1;transform:none}}
+@keyframes secin{from{opacity:0;transform:translateY(60px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes wave{0%,100%{transform:scaleY(1) translateY(0)}50%{transform:scaleY(1.07) translateY(-4px)}}
+@keyframes kb{from{transform:scale(1.06)}to{transform:scale(1)}}
+@keyframes par{from{transform:translateY(-8%)}to{transform:translateY(8%)}}
+.up1{animation:up .9s cubic-bezier(.2,.7,.2,1) both .15s}
+.up2{animation:up .9s cubic-bezier(.2,.7,.2,1) both .3s}
+.up3{animation:up .9s cubic-bezier(.2,.7,.2,1) both .45s}
+.heroimg{animation:kb 1.8s cubic-bezier(.2,.7,.2,1) both}
+.arches g{transform-box:fill-box;transform-origin:50% 100%;opacity:0}
+.arches.in g{animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both,wave 7s ease-in-out infinite}
+.tl{position:relative;padding-left:44px}
+.tl::before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:#DCE7E2}
+.tl > *{position:relative}
+.tl > *::before{content:"";position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:999px;background:#70A84C;border:3px solid #FFFFFF;box-shadow:0 0 0 2px #DCE7E2}
+@supports (animation-timeline: view()){
+.sec{animation:secin linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+.rv{animation:up linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.par{animation:par linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+}
+@media (max-width: 900px){
+.h1{font-size:40px !important}.h2{font-size:32px !important}
+.navbar,.navright{display:none !important}
+.burger{display:inline-flex !important}
+.hide-m{display:none !important}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+</style>
+</helmet>
+<div style="font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; color: #10505C; background: #FFFFFF; min-width: 0; overflow-x: clip">
+<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(255,255,255,0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 10px 30px rgba(16,80,92,0.08)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+<a href="Main.dc.html" aria-label="Academia Pumangol — início" style="display: flex; align-items: center; flex: 0 0 auto"><img src="./assets/b7e635c8b7e87db412d635bff223a6ff.png" alt="Academia Pumangol" style="height: 52px; width: auto; display: block"></a>
+<nav class="navbar" aria-label="Principal" style="display: flex; align-items: center; gap: 30px"><a class="nl" href="Main.dc.html">Início</a><a class="nl on" href="Academia.dc.html">A Academia</a><a class="nl" href="Formacao.dc.html">Formação</a><a class="nl" href="Formadores.dc.html">Formadores</a><a class="nl" href="Noticias.dc.html">Notícias</a><a class="nl" href="Contactos.dc.html">Contactos</a></nav>
+<div class="navright" style="display: flex; align-items: center; gap: 18px">
+<a href="#" style="color: #10505C; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.08em">PT <span style="opacity: .45">| EN</span></a>
+<a href="Contactos.dc.html" class="btn btn-g" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 6px 0 22px; background: #70A84C; color: #0B3B45; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 14px">Pedir proposta<span style="width: 36px; height: 36px; border-radius: 999px; background: #0B3B45; display: inline-flex; align-items: center; justify-content: center"><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#70A84C" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+<button type="button" class="burger" aria-label="Abrir menu" onClick="{{toggleMenu}}" style="display: none; width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid #10505C; background: transparent; color: #10505C; cursor: pointer; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}"><div style="background: #FFFFFF; border-top: 1px solid #E3ECE8; padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 4px"><a href="Main.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">Início</a><a href="Academia.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">A Academia</a><a href="Formacao.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">Formação</a><a href="Formadores.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">Formadores</a><a href="Noticias.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">Notícias</a><a href="Contactos.dc.html" style="padding: 14px 8px; border-bottom: 1px solid #EEF3F1; text-decoration: none; color: #10505C; font-weight: 700; font-size: 18px">Contactos</a></div></sc-if>
+</header>
+<section style="position: relative; height: 640px; background: #0B3B45; color: #FFFFFF; overflow: hidden">
+<img class="heroimg" src="./assets/5e8229436e25846b01419582077be5da.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,59,69,0.86) 0%, rgba(11,59,69,0.5) 55%, rgba(11,59,69,0.2) 100%)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 160px 24px 90px; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-end; gap: 18px">
+<div class="up1" style="font-size: 13px; color: #B9D0CC; font-weight: 600">Início › A Academia</div>
+<div class="up1"><div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9BD774"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#FFFFFF"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>A Academia</div></div>
+<h1 class="h1 up2" style="margin: 0; font-size: 68px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; max-width: 860px">Uma academia criada para <span style="color: #9BD774">criar futuro.</span></h1>
+<p class="up3" style="margin: 0; font-size: 19px; line-height: 1.65; color: #D6E6E2; max-width: 640px">Desde 2012, a unidade de formação do Grupo Pumangol desenvolve as pessoas que fazem as organizações crescer em Angola.</p>
+</div>
+</section><section class="stack" style="background: #FFFFFF;"><div class="sec" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 130px"><div style="display: flex; flex-wrap: wrap; gap: 72px; align-items: flex-start">
+<div style="flex: 1 1 520px; min-width: 0"><div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #10505C"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#10505C"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>A nossa história</div><h2 class="h2" style="margin: 22px 0 0; font-size: 50px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; max-width: 760px; color: #10505C">Quem somos</h2>
+<p style="margin: 26px 0 0; font-size: 18px; line-height: 1.75; color: #3C5A62">A Academia Pumangol nasceu para responder a uma necessidade concreta: formar os colaboradores do Grupo com a qualidade e a exigência das melhores escolas internacionais. Ao longo de mais de uma década, essa missão cresceu e abriu-se aos profissionais e às empresas de todo o país.</p>
+<p style="margin: 18px 0 0; font-size: 18px; line-height: 1.75; color: #3C5A62">Hoje desenhamos programas de liderança, estratégia, gestão comercial, finanças e operações, em parceria com instituições como a NOVA SBE Executive Education, e preparamos o próximo arco do nosso caminho: levar o conhecimento a todos os que querem crescer.</p></div>
+<div class="tl" style="flex: 0 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 34px; padding-top: 10px">
+<div><div class="disp" style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #70A84C">2012</div><div class="disp" style="font-size: 22px; font-weight: 700; margin-top: 4px">Nasce a Academia Pumangol</div><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: #3C5A62">Criada pelo Grupo Pumangol para a formação contínua dos seus colaboradores.</p></div>
+<div><div class="disp" style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #70A84C">[Ano]</div><div class="disp" style="font-size: 22px; font-weight: 700; margin-top: 4px">Abertura aos profissionais do setor</div><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: #3C5A62">Os primeiros programas executivos abertos a empresas e técnicos de todo o país.</p></div>
+<div><div class="disp" style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #70A84C">[Ano]</div><div class="disp" style="font-size: 22px; font-weight: 700; margin-top: 4px">Parceria com a NOVA SBE Executive Education</div><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: #3C5A62">Programas e conferências com uma das melhores escolas de negócios da Europa.</p></div>
+<div><div class="disp" style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #70A84C">Em breve</div><div class="disp" style="font-size: 22px; font-weight: 700; margin-top: 4px">Conhecimento aberto a toda a comunidade</div><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: #3C5A62">O próximo arco: programas acessíveis a todos os que procuram crescer.</p></div>
+</div></div></div></section><section style="background: #F4F7F5; border-radius: 48px 48px 0 0;"><div class="sec" style="max-width: 1240px; margin: 0 auto; padding: 130px 24px"><div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #10505C"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#10505C"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>O que nos move</div><h2 class="h2" style="margin: 22px 0 0; font-size: 50px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; max-width: 760px; color: #10505C">Missão, visão e valores</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 56px">
+<div class="lift" style="background: #FFFFFF; border: 1px solid #E3ECE8; border-radius: 28px; padding: 34px"><span style="width: 56px; height: 56px; border-radius: 18px; background: #10505C; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9BD774" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><h3 style="margin: 22px 0 10px; font-size: 24px; font-weight: 700">Missão</h3><p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3C5A62">Desenvolver pessoas e equipas competentes, seguras e produtivas, para organizações mais eficientes e sustentáveis.</p></div>
+<div class="lift" style="background: #FFFFFF; border: 1px solid #E3ECE8; border-radius: 28px; padding: 34px"><span style="width: 56px; height: 56px; border-radius: 18px; background: #70A84C; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B3B45" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><h3 style="margin: 22px 0 10px; font-size: 24px; font-weight: 700">Visão</h3><p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3C5A62">Ser referência em formação executiva e técnica em Angola, reconhecida pela qualidade, inovação e impacto social.</p></div>
+<div class="lift" style="background: #10505C; color: #FFFFFF; border-radius: 28px; padding: 34px"><span style="width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center"><svg width="26" height="23.8" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#FFFFFF"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg></span><h3 style="margin: 22px 0 10px; font-size: 24px; font-weight: 700">Valores</h3><div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Excelência</span><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Integridade</span><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Segurança</span><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Inovação</span><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Impacto social</span><span style="font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.1)">Pessoas primeiro</span></div></div>
+</div></div></section><section class="stack" style="background: #FFFFFF;"><div class="sec" style="max-width: 1240px; margin: 0 auto; padding: 130px 24px"><div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0"><div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #10505C"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#10505C"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>O nosso símbolo</div><h2 class="h2" style="margin: 22px 0 0; font-size: 50px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; max-width: 760px; color: #10505C">Curvas que sobem. Um caminho infinito.</h2>
+<p style="margin: 24px 0 0; font-size: 18px; line-height: 1.75; color: #3C5A62">As curvas ascendentes do logótipo representam o caminho infinito e a procura incessante pelo conhecimento. Cada arco nasce do anterior e chega mais alto, como cada formação prepara a seguinte.</p>
+<p style="margin: 16px 0 0; font-size: 18px; line-height: 1.75; color: #3C5A62">Três arcos, três públicos: os colaboradores do Grupo, os profissionais do setor e, no futuro, todos os que procuram conhecimento com impacto positivo na sua vida.</p>
+<img src="./assets/b7e635c8b7e87db412d635bff223a6ff.png" alt="Academia Pumangol" style="height: 90px; width: auto; display: block; margin-top: 34px"></div>
+<div style="flex: 1 1 480px; min-width: 0"><div style="position: relative; width: 100%; max-width: 640px; margin: 0 auto; aspect-ratio: 640 / 460"><svg viewBox="0 0 640 460" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><g><path d="M370,460 A135,440 0 0 1 505,20 L505,34 A89,426 0 0 0 416,460 Z" fill="#10505C"></path><path d="M505,20 A135,440 0 0 1 640,460 L594,460 A89,426 0 0 0 505,34 Z" fill="#70A84C"></path></g><g><path d="M170,460 A130,320 0 0 1 300,140 L300,154 A86,306 0 0 0 214,460 Z" fill="#10505C"></path><path d="M300,140 A130,320 0 0 1 430,460 L386,460 A86,306 0 0 0 300,154 Z" fill="#70A84C"></path></g><g><path d="M0,460 A115,210 0 0 1 115,250 L115,264 A71,196 0 0 0 44,460 Z" fill="#10505C"></path><path d="M115,250 A115,210 0 0 1 230,460 L186,460 A71,196 0 0 0 115,264 Z" fill="#70A84C"></path></g></svg>
+<span style="position: absolute; left: 18%; top: 66%; transform: translateX(-50%); background: #10505C; color: #FFFFFF; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; white-space: nowrap">01 · Colaboradores</span>
+<span style="position: absolute; left: 47%; top: 42%; transform: translateX(-50%); background: #10505C; color: #FFFFFF; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; white-space: nowrap">02 · Profissionais</span>
+<span style="position: absolute; left: 79%; top: 17%; transform: translateX(-50%); background: #70A84C; color: #0B3B45; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; white-space: nowrap">03 · Todos</span></div></div>
+</div></div></section><section id="parcerias" style="background: #F4F7F5; border-radius: 48px 48px 0 0"><div class="sec" style="max-width: 1240px; margin: 0 auto; padding: 130px 24px">
+<div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #10505C"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#10505C"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>Parcerias</div><h2 class="h2" style="margin: 22px 0 0; font-size: 50px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; max-width: 760px; color: #10505C">Parceiros que elevam o nível</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px">
+<div class="lift" style="background: #FFFFFF; border: 1px solid #E3ECE8; border-radius: 28px; padding: 34px; grid-column: span 1"><div class="disp" style="font-size: 28px; font-weight: 800">NOVA SBE Executive Education</div><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.7; color: #3C5A62">Programas e conferências com a Nova School of Business &amp; Economics, uma das escolas de negócios mais reconhecidas da Europa. A palestra "Liderar em tempos de mudança permanente", com o Professor Nadim Habib, é um exemplo desta colaboração.</p></div>
+<div style="border: 1px dashed #C4D2CE; border-radius: 28px; padding: 34px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #6F8A91">[Parceiro institucional]</div>
+<div style="border: 1px dashed #C4D2CE; border-radius: 28px; padding: 34px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #6F8A91">[Universidade parceira]</div>
+</div></div></section><section class="stack" style="background: #FFFFFF;"><div class="sec" style="max-width: 1240px; margin: 0 auto; padding: 130px 24px"><div style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #10505C"><svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true" style="flex: 0 0 auto"><path d="M1,22 A11,20 0 0 1 12,2 L12,4 A5.5,18 0 0 0 6.5,22 Z" fill="#10505C"></path><path d="M12,2 A11,20 0 0 1 23,22 L17.5,22 A5.5,18 0 0 0 12,4 Z" fill="#70A84C"></path></svg>Instalações e eventos</div><h2 class="h2" style="margin: 22px 0 0; font-size: 50px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; max-width: 760px; color: #10505C">Onde o conhecimento acontece</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 240px; gap: 18px; margin-top: 56px">
+<div class="zoom" style="position: relative; border-radius: 26px; overflow: hidden; grid-column: span 2"><img src="./assets/5600965fa30b37dd393a640b97ea149b.jpg" alt="Auditório" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%"><span style="position: absolute; left: 16px; bottom: 16px; background: rgba(255,255,255,0.92); color: #10505C; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px">Auditório</span></div><div class="zoom" style="position: relative; border-radius: 26px; overflow: hidden; grid-column: span 1"><img src="./assets/5bd39d1d81052dc1818c022f48ad4a2b.jpg" alt="Participantes" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%"><span style="position: absolute; left: 16px; bottom: 16px; background: rgba(255,255,255,0.92); color: #10505C; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px">Participantes</span></div><div class="zoom" style="position: relative; border-radius: 26px; overflow: hidden; grid-column: span 1"><img src="./assets/dbec13f2cadffc634246f00224248eff.jpg" alt="Sessões e conferências" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%"><span style="position: absolute; left: 16px; bottom: 16px; background: rgba(255,255,255,0.92); color: #10505C; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px">Sessões e conferências</span></div><div class="zoom" style="position: relative; border-radius: 26px; overflow: hidden; grid-column: span 2"><img src="./assets/f6ad053af8711217ebce634937be1ef6.jpg" alt="Networking" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%"><span style="position: absolute; left: 16px; bottom: 16px; background: rgba(255,255,255,0.92); color: #10505C; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px">Networking</span></div>
+</div></div></section><section style="background: #0B3B45; color: #FFFFFF; position: relative; overflow: hidden">
+<img src="./assets/19d7f0bb0ecaecb322eb65310af125e3.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: .2">
+<div class="sec" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 120px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px">
+<h2 class="h2" style="margin: 0; font-size: 60px; line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; max-width: 860px">Faça parte do próximo arco.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #D6E6E2; max-width: 600px">Conheça os programas abertos ou peça uma proposta de formação à medida para a sua empresa.</p>
+<div style="margin-top: 8px"><a href="Formacao.dc.html" class="btn btn-g" style="display: inline-flex; align-items: center; gap: 12px; height: 58px; padding: 0 7px 0 26px; background: #70A84C; color: #0B3B45; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 16px">Ver programas 2026<span style="width: 44px; height: 44px; border-radius: 999px; background: #0B3B45; display: inline-flex; align-items: center; justify-content: center"><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#70A84C" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a></div>
+</div></section>
+<footer style="position: relative; background: #0B3B45; color: #A9C4C0; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 90px 24px 0; display: flex; flex-wrap: wrap; gap: 48px; position: relative; z-index: 1">
+<div style="flex: 2 1 320px; min-width: 0">
+<img src="./assets/237e7eeb6d87b8cf83c847dc5620bd51.png" alt="Academia Pumangol" style="height: 86px; width: auto; display: block">
+<p style="margin: 22px 0 0; font-size: 15px; line-height: 1.7; max-width: 360px">Formação de excelência para o desenvolvimento de pessoas e o fortalecimento das organizações em Angola.</p>
+<label for="n-mail" style="display: block; font-size: 14px; font-weight: 700; color: #FFFFFF; margin: 28px 0 10px">Newsletter: novas turmas e eventos</label>
+<div style="display: flex; gap: 6px; max-width: 420px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 5px"><input id="n-mail" class="fld fld-d" type="email" placeholder="nome@empresa.ao" style="flex: 1 1 auto; min-width: 0; border: 0; background: transparent; height: 46px"><button type="button" class="btn btn-g" style="height: 46px; padding: 0 22px; border: 0; border-radius: 999px; background: #70A84C; color: #0B3B45; font: inherit; font-weight: 800; cursor: pointer">Subscrever</button></div>
+</div>
+<div style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; margin-bottom: 4px">Academia</strong><a href="Academia.dc.html" style="color: #A9C4C0; text-decoration: none">Sobre nós</a><a href="Formadores.dc.html" style="color: #A9C4C0; text-decoration: none">Formadores</a><a href="Academia.dc.html#parcerias" style="color: #A9C4C0; text-decoration: none">Parcerias</a><a href="Noticias.dc.html" style="color: #A9C4C0; text-decoration: none">Notícias</a></div>
+<div style="flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; margin-bottom: 4px">Formação</strong><a href="Formacao.dc.html#medida" style="color: #A9C4C0; text-decoration: none">Soluções para empresas</a><a href="Formacao.dc.html" style="color: #A9C4C0; text-decoration: none">Programas abertos</a><a href="Formacao.dc.html" style="color: #A9C4C0; text-decoration: none">Calendário</a><a href="Formacao.dc.html#catalogo" style="color: #A9C4C0; text-decoration: none">Catálogo 2026</a></div>
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px"><strong style="color: #FFFFFF; margin-bottom: 4px">Contactos</strong><span>Luanda, Angola</span><span>+244 923 000 000</span><span>info@academiapumangol.ao</span><span>www.pumangol.co.ao</span></div>
+</div>
+<div ref="{{footRef}}" style="position: relative; height: 320px; margin-top: 40px">
+<svg class="arches {{footCls}}" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><g style="animation-delay: 0.84s, 2.14s"><path d="M1350,380 A150,412 0 0 1 1500,-32 L1500,-18 A102,398 0 0 0 1398,380 Z" fill="#1A5F6C"></path><path d="M1500,-32 A150,412 0 0 1 1650,380 L1602,380 A102,398 0 0 0 1500,-18 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.70s, 2.00s"><path d="M1115,380 A150,360 0 0 1 1265,20 L1265,34 A102,346 0 0 0 1163,380 Z" fill="#1A5F6C"></path><path d="M1265,20 A150,360 0 0 1 1415,380 L1367,380 A102,346 0 0 0 1265,34 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.56s, 1.86s"><path d="M880,380 A150,308 0 0 1 1030,72 L1030,86 A102,294 0 0 0 928,380 Z" fill="#1A5F6C"></path><path d="M1030,72 A150,308 0 0 1 1180,380 L1132,380 A102,294 0 0 0 1030,86 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.42s, 1.72s"><path d="M645,380 A150,256 0 0 1 795,124 L795,138 A102,242 0 0 0 693,380 Z" fill="#1A5F6C"></path><path d="M795,124 A150,256 0 0 1 945,380 L897,380 A102,242 0 0 0 795,138 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.28s, 1.58s"><path d="M410,380 A150,204 0 0 1 560,176 L560,190 A102,190 0 0 0 458,380 Z" fill="#1A5F6C"></path><path d="M560,176 A150,204 0 0 1 710,380 L662,380 A102,190 0 0 0 560,190 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.14s, 1.44s"><path d="M175,380 A150,152 0 0 1 325,228 L325,242 A102,138 0 0 0 223,380 Z" fill="#1A5F6C"></path><path d="M325,228 A150,152 0 0 1 475,380 L427,380 A102,138 0 0 0 325,242 Z" fill="#70A84C"></path></g><g style="animation-delay: 0.00s, 1.30s"><path d="M-60,380 A150,100 0 0 1 90,280 L90,294 A102,86 0 0 0 -12,380 Z" fill="#1A5F6C"></path><path d="M90,280 A150,100 0 0 1 240,380 L192,380 A102,86 0 0 0 90,294 Z" fill="#70A84C"></path></g></svg>
+<div class="disp hide-m" style="position: absolute; left: 0; right: 0; top: 24px; max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; font-size: 30px; font-weight: 700; color: #FFFFFF">Cria futuro.</div>
+</div>
+<div style="background: #0B3B45; position: relative; z-index: 1"><div style="max-width: 1240px; margin: 0 auto; padding: 22px 24px 28px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 13px"><span>© 2026 Academia Pumangol. Todos os direitos reservados.</span><span>Política de Privacidade · Termos</span></div></div>
+</footer>
+<a href="#" aria-label="Falar por WhatsApp" style="position: fixed; right: 24px; bottom: 24px; width: 62px; height: 62px; border-radius: 999px; background: #70A84C; display: flex; align-items: center; justify-content: center; z-index: 40; box-shadow: 0 12px 30px rgba(16,80,92,0.3)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B3B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg></a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { menu: false, footIn: false };
+    this.footRef = (el) => { this._foot = el; };
+  }
+  componentDidMount() {
+    var self = this;
+    if (this._foot && typeof IntersectionObserver !== 'undefined') {
+      this._io = new IntersectionObserver(function (entries) {
+        if (entries[0] && entries[0].isIntersecting) { self.setState({ footIn: true }); self._io.disconnect(); }
+      }, { threshold: 0.2 });
+      this._io.observe(this._foot);
+    } else { this.setState({ footIn: true }); }
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+
+  renderVals() {
+    var self = this, s = this.state;
+    return {
+      footRef: this.footRef, footCls: s.footIn ? 'in' : '', menuOpen: s.menu, toggleMenu: function () { self.setState({ menu: !s.menu }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: academia-pumangol-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: academia_pumangol
+    ports:
+      - "5432:5432"
+    volumes:
+      - academia_pumangol_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d academia_pumangol"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+    container_name: academia-pumangol-rabbitmq
+    restart: unless-stopped
+    hostname: academia-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: academia
+      RABBITMQ_DEFAULT_PASS: academia
+      RABBITMQ_DEFAULT_VHOST: academia
+    ports:
+      - "5672:5672"   # AMQP
+      - "15672:15672" # Painel de gestão: http://localhost:15672
+    volumes:
+      - academia_pumangol_rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  academia_pumangol_pgdata:
+  academia_pumangol_rabbitmq:

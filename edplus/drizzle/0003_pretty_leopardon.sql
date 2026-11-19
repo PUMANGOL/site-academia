@@ -1,0 +1,2 @@
+CREATE TYPE "public"."enrollment_status" AS ENUM('not_started', 'in_progress', 'completed');--> statement-breakpoint
+ALTER TABLE "enrollments" ADD COLUMN "status" "enrollment_status" DEFAULT 'not_started' NOT NULL;

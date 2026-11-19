@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1788788951000,
+      "tag": "0000_quick_lockjaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790085073209,
+      "tag": "0001_kind_human_cannonball",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790087788053,
+      "tag": "0002_workable_yellow_claw",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790090439057,
+      "tag": "0003_pretty_leopardon",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790158941749,
+      "tag": "0004_course_seats",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790260731766,
+      "tag": "0005_course_details",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790265735206,
+      "tag": "0006_email_jobs",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1790670582963,
+      "tag": "0007_content",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1790678174130,
+      "tag": "0008_page_versions",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1790765217875,
+      "tag": "0009_company_requests",
+      "breakpoints": true
+    }
+  ]
+}
