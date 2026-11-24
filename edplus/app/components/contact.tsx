@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useI18n } from "@/app/i18n/I18nProvider";
 
 // Pesquisa usada no mapa (Google Maps, sem chave de API).
@@ -20,13 +19,6 @@ export default function ContactSection() {
 								{t("contact.title")} <br />
 								{t("contact.title2")}
 							</h2>
-
-							<Image
-								src="/assets/img/shapes/title.svg"
-								alt=""
-								width={120}
-								height={20}
-							/>
 						</div>
 
 						<div className="contact-info">
@@ -78,7 +70,7 @@ export default function ContactSection() {
 								<input type="email" placeholder={t("contact.emailPlaceholder")} />
 								<input type="text" placeholder={t("contact.subject")} />
 								<textarea placeholder={t("contact.message")}></textarea>
-								<button type="submit" className="fbtn">
+								<button type="submit" className="blue_btn round_btn btn-brand-dark">
 									{t("contact.send")} <i className="ph ph-arrow-right"></i>
 								</button>
 								<p className="form-message"></p>

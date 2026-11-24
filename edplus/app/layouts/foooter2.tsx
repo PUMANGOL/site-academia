@@ -55,7 +55,7 @@ export default function FooterTwo() {
 					<div className="col-lg-4 col-md-6 footer-logo wow fadeIn">
 						<div className="footer-widget about-widget">
 							<Link href="/">
-								<SiteLogo width={200} height={86} inverted />
+								<SiteLogo height={80} signature inverted />
 							</Link>
 
 							<p className="mt-4">{t("footer.aboutText")}</p>

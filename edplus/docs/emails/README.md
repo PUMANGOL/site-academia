@@ -1,4 +1,4 @@
-# Emails da Pumangol Academy
+# Emails da Academia Pumangol
 
 Documentação do sistema de envio de emails: como os emails nascem, como chegam ao
 RabbitMQ, como o worker os envia e porque foi desenhado assim.
@@ -41,3 +41,30 @@ template → função em `lib/mail/jobs.ts`.
 O comprovativo de inscrição (PDF A4) é gerado pelo worker em `worker/receipt-pdf.ts`
 (PDFKit) a partir de `payload.receipts`, gravado no job pelo site. Com
 `MAIL_DRY_RUN=true`, os PDFs ficam em `storage/mail-preview/` para revisão.
+
+## Identidade visual
+
+Os emails, o comprovativo em PDF e os relatórios em Excel seguem o manual de normas
+gráficas da Academia Pumangol. Os clientes de email ignoram variáveis CSS e quase todas
+as *web fonts*, por isso as cores estão escritas por extenso no código:
+
+| Elemento | Valor | Utilização |
+|---|---|---|
+| Midnight Green | `#07525D` | Títulos, links, nome da Academia no rodapé, cabeçalho das tabelas do Excel (texto branco) |
+| Verde | `#75A63D` | Filetes e marcadores de lista. Nunca em texto pequeno sobre branco; texto sobre este verde é `#043138`, nunca branco |
+| Verde escuro "Pumangol" | `#00764A` | Botão dos emails, com texto branco |
+| Vermelho | `#BE1622` | Só pequenos apontamentos (hoje não é usado) |
+| Tipografia dos emails | `Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif` | A Montserrat só aparece nos clientes que carregam *web fonts*; os restantes usam Helvetica ou Arial |
+| Tipografia do PDF | Helvetica (embutida no PDFKit) | Comprovativo de inscrição |
+| Tipografia do Excel | Calibri (tipo de letra do próprio Excel) | Relatórios; as larguras das colunas estão afinadas para este tipo de letra |
+
+Logótipo (só os ficheiros oficiais, sem recolorir, recortar ou esticar):
+
+- **Emails e Excel**: `public/assets/img/email/logo.png` (496×139 px), versão a cores sem
+  assinatura, redimensionada a partir de `public/assets/img/academia/logo-color-compact.png`.
+  Nos emails vai embutida como anexo inline, com 220 px de largura e altura automática.
+- **Comprovativo em PDF**: `public/assets/img/logo.png` (1149×428 px), versão a cores com a
+  assinatura "Cria futuro.", igual a `public/assets/img/academia/logo-color.png`.
+- A largura e a altura indicadas no código respeitam a proporção do ficheiro (1149:322 sem
+  assinatura, 1149:428 com assinatura). Em fundo branco usa-se a versão a cores; em fundo
+  Midnight Green, a versão negativa (`public/assets/img/academia/logo-white-compact.png`).

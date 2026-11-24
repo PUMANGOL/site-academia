@@ -33,16 +33,19 @@ type ChartsData = {
 };
 
 export default function StudentDashboardCharts({ data }: { data: ChartsData }) {
+	// Cinzento (por iniciar), Midnight Green (em curso) e verde (concluído):
+	// fatias vizinhas sempre com cores bem distintas.
 	const statusData = [
-		{ label: "Não iniciados", value: data.notStarted, fill: COLORS[3] },
+		{ label: "Não iniciados", value: data.notStarted, fill: COLORS[2] },
 		{ label: "Em progresso", value: data.inProgress, fill: COLORS[0] },
-		{ label: "Concluídos", value: data.completed, fill: COLORS[2] },
+		{ label: "Concluídos", value: data.completed, fill: COLORS[1] },
 	].filter((item) => item.value > 0);
 
-	const categoryData = data.coursesByCategory.map((item, index) => ({
+	// Série única: todas as barras em Midnight Green, a cor principal da marca.
+	const categoryData = data.coursesByCategory.map((item) => ({
 		name: pickLocale(item.name, "pt"),
 		value: item.value,
-		fill: COLORS[index % COLORS.length],
+		fill: COLORS[0],
 	}));
 
 	const monthData = data.enrollmentsByMonth.map((item) => ({

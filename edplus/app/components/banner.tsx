@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import BrandMark from "@/app/components/brand-mark";
 import { useBlockContent, type BlockData } from "@/app/components/page-blocks/use-block-content";
@@ -54,22 +53,6 @@ export default function MainBanner({
 					</p>
 				</div>
 			</div>
-
-			<Image
-				src="/assets/img/shapes/blshape.svg"
-				alt=""
-				width={300}
-				height={300}
-				className="blshape"
-			/>
-
-			<Image
-				src="/assets/img/shapes/brshape.svg"
-				alt=""
-				width={300}
-				height={300}
-				className="brshape"
-			/>
 		</section>
 	);
 }

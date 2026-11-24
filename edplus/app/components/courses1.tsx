@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import VideoPopup from "../VideoPopup";
 import CourseCard from "@/app/components/course-card";
 import BrandMark from "@/app/components/brand-mark";
@@ -43,12 +42,6 @@ export default function Courses1({
 									{text("eyebrow")}
 								</span>
 								<h2>{text("title")}</h2>
-								<Image
-									src="/assets/img/shapes/title.svg"
-									alt=""
-									width={216}
-									height={19}
-								/>
 							</div>
 						</div>
 

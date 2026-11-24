@@ -1,14 +1,3 @@
-:root {
-  --background: #fff;
-  --foreground: #222;
-  --secondary: #70A84C;
-}
-
-[data-theme="dark"] {
-  --background: #0b1416;
-  --foreground: #f1f5f6;
-}
-
 [data-theme="light"] {
   color-scheme: light;
 }
@@ -101,6 +90,11 @@
   background: rgba(120, 120, 120, 0.22);
 }
 
+[data-theme="dark"] .payment-reference-amount,
+[data-theme="dark"] .payment-reference-copy-icon {
+  color: var(--ap-green);
+}
+
 .checkout-success {
   text-align: center;
   padding: 2rem 0;
@@ -108,8 +102,12 @@
 
 .checkout-success-icon {
   font-size: 3.5rem;
-  color: var(--secondary);
+  color: var(--ap-pumangol);
   margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .checkout-success-icon {
+  color: var(--ap-green);
 }
 
 /* Form controls follow the palette; the vendor template hardcodes light values. */
@@ -127,7 +125,7 @@
 [data-theme="dark"] .search-control:focus {
   background-color: var(--paper);
   color: var(--title);
-  border-color: var(--blue);
+  border-color: var(--ap-green);
   box-shadow: none;
 }
 
@@ -147,26 +145,41 @@
 .admin-shell {
   /* --title/--body/--gray/--line/--paper are intentionally NOT redeclared here —
      they inherit the theme-aware tokens already defined on :root / [data-theme="dark"]
-     in the vendor stylesheet, which is what makes dark mode apply to the panels too. */
-  --blue: #0e4f5b;
-  --secondary: #70a74d;
-  --yellow: #ffa722;
-  --red: #ff3636;
-  --chart-1: #2a78d6;
-  --chart-2: #eb6834;
-  --chart-3: #1baf7a;
-  --chart-4: #eda100;
+     in the vendor stylesheet, which is what makes dark mode apply to the panels too.
+     As cores da marca (--blue, --secondary e os tokens --ap-*) também vêm de :root. */
+  /* Verde em texto pequeno: verde escuro Pumangol no claro, verde no escuro. */
+  --green-text: var(--ap-pumangol);
+  /* Aviso: o verde-amarelo do degradé do manual, sempre como fundo com texto Midnight. */
+  --warning: #CCD341;
+  /* Séries dos gráficos: Midnight, verde, cinzento do manual e verde escuro Pumangol. */
+  --chart-1: var(--ap-ink);
+  --chart-2: var(--ap-green);
+  --chart-3: #6E6F71;
+  --chart-4: var(--ap-pumangol);
   color: var(--title);
+  font-family: var(--ap-font);
 }
 
 [data-theme="dark"] .admin-shell {
-  /* --blue is used as text/border/icon color throughout the panels, not just as a
-     button background — the light-mode value is too dark to read on a dark page. */
-  --blue: #4fb3c4;
-  --chart-1: #3987e5;
-  --chart-2: #d95926;
-  --chart-3: #199e70;
-  --chart-4: #c98500;
+  /* --blue is used as text/border/icon color throughout the panels — Midnight is too
+     dark to read on a dark page, so the accent becomes the brand green. Fills under
+     white text use --ap-ink / --ap-pumangol directly and stay the same in both themes. */
+  --blue: var(--ap-green);
+  --green-text: var(--ap-green);
+  --chart-1: color-mix(in srgb, var(--ap-ink) 40%, #fff);
+  --chart-3: #E8E8E8;
+  --chart-4: color-mix(in srgb, var(--ap-pumangol) 90%, #fff);
+}
+
+.admin-shell h1,
+.admin-shell h2,
+.admin-shell h3,
+.admin-shell h4,
+.admin-shell h5,
+.admin-shell h6 {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 body:has(.admin-shell) {
@@ -211,13 +224,23 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-sidebar-label {
-  margin-top: 0.5rem;
+  margin-top: 0.875rem;
   text-align: center;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--secondary);
+  color: var(--green-text);
+}
+
+/* Tema escuro: o logótipo negativo (branco + verde) assenta em Midnight, como no manual. */
+[data-theme="dark"] .admin-shell .admin-sidebar-brand {
+  border-bottom-color: transparent;
+  background: var(--ap-ink);
+}
+
+[data-theme="dark"] .admin-shell .admin-sidebar-label {
+  color: #fff;
 }
 
 .admin-shell .admin-nav {
@@ -246,8 +269,13 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-nav-link.is-active {
-  background: var(--blue);
+  background: var(--ap-ink);
   color: #fff;
+}
+
+/* No tema escuro o Midnight fica próximo do painel: um filete verde delimita o item ativo. */
+[data-theme="dark"] .admin-shell .admin-nav-link.is-active {
+  box-shadow: inset 0 0 0 1px var(--ap-green);
 }
 
 .admin-shell .admin-sidebar-footer {
@@ -282,9 +310,9 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-header .theme-toggle:hover {
-  background: var(--secondary);
-  border-color: var(--secondary);
-  color: #fff;
+  background: var(--ap-green);
+  border-color: var(--ap-green);
+  color: var(--ap-on-green);
 }
 
 .admin-shell .admin-menu-toggle {
@@ -350,8 +378,8 @@ body:has(.admin-shell) {
 .admin-shell .admin-page-title {
   margin: 0;
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--title);
+  font-weight: 700;
+  color: var(--ap-ink);
 }
 
 .admin-shell .admin-page-description {
@@ -381,8 +409,8 @@ body:has(.admin-shell) {
 .admin-shell .admin-card-title {
   margin: 0;
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--title);
+  font-weight: 700;
+  color: var(--ap-ink);
 }
 
 .admin-shell .admin-card-body {
@@ -408,7 +436,9 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-stat-card {
-  --stat-tone: var(--chart-1);
+  /* Tons próprios dos indicadores, independentes das séries dos gráficos. */
+  --stat-tone: var(--ap-ink);
+  --stat-ink: var(--stat-tone);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -437,11 +467,16 @@ body:has(.admin-shell) {
   transform: translateY(-1px);
 }
 
-.admin-shell .admin-stat-tone-blue { --stat-tone: var(--chart-1); }
-.admin-shell .admin-stat-tone-orange { --stat-tone: var(--chart-2); }
-.admin-shell .admin-stat-tone-green { --stat-tone: var(--chart-3); }
-.admin-shell .admin-stat-tone-yellow { --stat-tone: var(--chart-4); }
-.admin-shell .admin-stat-tone-teal { --stat-tone: var(--blue); }
+.admin-shell .admin-stat-tone-blue { --stat-tone: var(--ap-ink); }
+.admin-shell .admin-stat-tone-orange { --stat-tone: var(--ap-green); --stat-ink: var(--ap-ink); }
+.admin-shell .admin-stat-tone-green { --stat-tone: var(--ap-pumangol); }
+.admin-shell .admin-stat-tone-yellow { --stat-tone: #6E6F71; }
+.admin-shell .admin-stat-tone-teal { --stat-tone: var(--ap-ink); }
+
+[data-theme="dark"] .admin-shell .admin-stat-card { --stat-tone: #fff; }
+[data-theme="dark"] .admin-shell .admin-stat-tone-orange { --stat-tone: var(--ap-green); --stat-ink: #fff; }
+[data-theme="dark"] .admin-shell .admin-stat-tone-green { --stat-tone: var(--ap-green); }
+[data-theme="dark"] .admin-shell .admin-stat-tone-yellow { --stat-tone: #6E6F71; --stat-ink: #E8E8E8; }
 
 .admin-shell .admin-stat-head {
   display: flex;
@@ -466,7 +501,7 @@ body:has(.admin-shell) {
   height: 2.25rem;
   border-radius: 0.625rem;
   background: color-mix(in srgb, var(--stat-tone) 14%, transparent);
-  color: var(--stat-tone);
+  color: var(--stat-ink);
   font-size: 1.25rem;
 }
 
@@ -490,10 +525,10 @@ body:has(.admin-shell) {
 
 .admin-shell .admin-stat-trend {
   border-radius: 999px;
-  background: color-mix(in srgb, var(--chart-3) 14%, transparent);
+  background: color-mix(in srgb, var(--green-text) 12%, transparent);
   padding: 0.0625rem 0.5rem;
   font-weight: 600;
-  color: var(--chart-3);
+  color: var(--green-text);
 }
 
 .admin-shell .admin-table td.admin-table-empty {
@@ -605,11 +640,11 @@ body:has(.admin-shell) {
 .admin-shell .admin-input:focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgb(14 79 91 / 12%);
+  box-shadow: 0 0 0 3px rgba(var(--ap-green-rgb), 0.28);
 }
 
 .admin-shell .admin-input-error {
-  border-color: var(--red);
+  border-color: var(--ap-red-text);
 }
 
 /* Seta nos dropdowns: o shorthand `background` do .admin-input apagava a do Bootstrap. */
@@ -744,16 +779,16 @@ body:has(.admin-shell) {
   gap: 0.25rem;
   border: 0;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--red) 10%, transparent);
+  background: rgba(var(--ap-red-rgb), 0.1);
   padding: 0.25rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--red);
+  color: var(--ap-red-text);
   cursor: pointer;
 }
 
 .admin-shell .admin-filter-clear:hover {
-  background: color-mix(in srgb, var(--red) 16%, transparent);
+  background: rgba(var(--ap-red-rgb), 0.14);
 }
 
 .admin-shell .admin-filter-actions {
@@ -813,22 +848,22 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-btn-primary {
-  background: var(--blue);
+  background: var(--ap-ink);
   color: #fff;
 }
 
 .admin-shell .admin-btn-primary:hover:not(:disabled) {
-  background: #0a3d47;
+  background: var(--ap-ink-deep);
   color: #fff;
 }
 
 .admin-shell .admin-btn-secondary {
-  background: var(--secondary);
+  background: var(--ap-pumangol);
   color: #fff;
 }
 
 .admin-shell .admin-btn-secondary:hover:not(:disabled) {
-  background: #5d8f41;
+  background: color-mix(in srgb, var(--ap-pumangol) 85%, #000);
   color: #fff;
 }
 
@@ -839,7 +874,7 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-btn-outline:hover:not(:disabled) {
-  background: var(--blue);
+  background: var(--ap-ink);
   color: #fff;
 }
 
@@ -854,13 +889,23 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-btn-danger {
-  background: var(--red);
+  background: var(--ap-red);
   color: #fff;
 }
 
 .admin-shell .admin-btn-danger:hover:not(:disabled) {
-  background: #e02e2e;
+  background: color-mix(in srgb, var(--ap-red) 85%, #000);
   color: #fff;
+}
+
+/* Tema escuro: os preenchimentos da marca ficam próximos do painel; o contorno delimita o botão. */
+[data-theme="dark"] .admin-shell .admin-btn-primary,
+[data-theme="dark"] .admin-shell .admin-btn-secondary {
+  border-color: var(--ap-green);
+}
+
+[data-theme="dark"] .admin-shell .admin-btn-danger {
+  border-color: var(--ap-red-text);
 }
 
 .admin-shell .admin-btn-sm {
@@ -883,26 +928,29 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-badge-default {
-  background: rgb(14 79 91 / 10%);
-  color: var(--blue);
+  background: rgba(var(--ap-ink-rgb), 0.1);
+  color: var(--ap-ink);
+}
+
+/* Tema escuro: etiquetas em cor cheia com texto branco, para o contraste não depender do fundo da linha. */
+[data-theme="dark"] .admin-shell .admin-badge-default {
+  background: var(--ap-ink);
+  color: #fff;
 }
 
 .admin-shell .admin-badge-success {
-  background: rgb(112 167 77 / 15%);
-  color: #4d7a32;
+  background: rgba(var(--ap-green-rgb), 0.15);
+  color: var(--ap-pumangol);
 }
 
 [data-theme="dark"] .admin-shell .admin-badge-success {
-  color: #8fd66b;
+  background: var(--ap-pumangol);
+  color: #fff;
 }
 
 .admin-shell .admin-badge-warning {
-  background: rgb(255 167 34 / 15%);
-  color: #b87400;
-}
-
-[data-theme="dark"] .admin-shell .admin-badge-warning {
-  color: #ffbb55;
+  background: var(--warning);
+  color: var(--ap-ink);
 }
 
 .admin-shell .admin-badge-muted {
@@ -911,8 +959,13 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-badge-danger {
-  background: rgb(255 54 54 / 12%);
-  color: var(--red);
+  background: rgba(var(--ap-red-rgb), 0.12);
+  color: var(--ap-red);
+}
+
+[data-theme="dark"] .admin-shell .admin-badge-danger {
+  background: var(--ap-red);
+  color: #fff;
 }
 
 .admin-shell .admin-table-wrap {
@@ -1066,22 +1119,18 @@ body:has(.admin-shell) {
 
 .admin-shell .admin-alert-error {
   border-radius: 0.375rem;
-  background: rgb(255 54 54 / 10%);
+  background: rgba(var(--ap-red-rgb), 0.1);
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
-  color: var(--red);
+  color: var(--ap-red-text);
 }
 
 .admin-shell .admin-alert-success {
   border-radius: 0.375rem;
-  background: rgb(112 167 77 / 12%);
+  background: rgba(var(--ap-green-rgb), 0.12);
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
-  color: #4d7a32;
-}
-
-[data-theme="dark"] .admin-shell .admin-alert-success {
-  color: #8fd66b;
+  color: var(--green-text);
 }
 
 .admin-shell .admin-tabs {
@@ -1208,13 +1257,26 @@ body:has(.admin-shell) {
 .admin-shell .admin-login-title {
   margin: 1.5rem 0 0;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--ap-ink);
 }
 
 .admin-shell .admin-login-subtitle {
   margin: 0.5rem 0 0;
   font-size: 0.875rem;
   color: var(--body);
+}
+
+/* Tema escuro: o cabeçalho do cartão passa a faixa Midnight, o fundo do logótipo negativo. */
+[data-theme="dark"] .admin-shell .admin-login-head {
+  margin: -2rem -2rem 2rem;
+  border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+  background: var(--ap-ink);
+  padding: 2rem 2rem 1.75rem;
+}
+
+[data-theme="dark"] .admin-shell .admin-login-subtitle {
+  color: #fff;
 }
 
 .admin-shell .admin-form-stack > * + * {
@@ -1310,7 +1372,7 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .admin-dropdown-item.is-danger {
-  color: var(--red);
+  color: var(--ap-red-text);
 }
 
 .admin-shell .admin-modal-backdrop {
@@ -1362,7 +1424,16 @@ body:has(.admin-shell) {
 .admin-shell .admin-modal-title {
   margin: 0;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--ap-ink);
+}
+
+/* No tema escuro o Midnight não se lê sobre os painéis: os títulos voltam ao neutro claro. */
+[data-theme="dark"] .admin-shell .admin-page-title,
+[data-theme="dark"] .admin-shell .admin-card-title,
+[data-theme="dark"] .admin-shell .admin-login-title,
+[data-theme="dark"] .admin-shell .admin-modal-title {
+  color: var(--title);
 }
 
 .admin-shell .admin-modal-close {
@@ -1508,6 +1579,10 @@ body:has(.admin-shell) {
   background: var(--f9);
 }
 
+[data-theme="dark"] .popup_searchform .popup_search_results .psr_view_all {
+  color: var(--ap-green);
+}
+
 /* Páginas de autenticação: só navbar + cartão, centrado no espaço visível */
 .auth-page {
   display: flex;
@@ -1516,8 +1591,8 @@ body:has(.admin-shell) {
   min-height: calc(100dvh - var(--header-height, 90px));
   padding: 48px 0;
   background:
-    radial-gradient(circle at 0% 0%, rgba(var(--blue-rgb), 0.08), transparent 45%),
-    radial-gradient(circle at 100% 100%, rgba(112, 167, 77, 0.1), transparent 45%),
+    radial-gradient(circle at 0% 0%, rgba(var(--ap-ink-rgb), 0.08), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(var(--ap-green-rgb), 0.1), transparent 45%),
     var(--gray);
 }
 
@@ -1538,7 +1613,7 @@ body:has(.admin-shell) {
   position: absolute;
   inset: 0 0 auto;
   height: 5px;
-  background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 60%, var(--green) 60%, var(--green) 100%);
+  background: var(--ap-gradient);
 }
 
 .auth-card-head,
@@ -1561,18 +1636,19 @@ body:has(.admin-shell) {
   border-radius: 50%;
   font-size: 34px;
   color: #fff;
-  background: linear-gradient(135deg, var(--blue) 0%, #1a7384 100%);
-  box-shadow: 0 0 0 8px rgba(var(--blue-rgb), 0.1);
+  background: var(--ap-ink);
+  box-shadow: 0 0 0 8px rgba(var(--ap-ink-rgb), 0.1);
 }
 
 .auth-card-icon.is-success {
-  background: linear-gradient(135deg, #5f9440 0%, var(--green) 100%);
-  box-shadow: 0 0 0 8px rgba(112, 167, 77, 0.14);
+  background: var(--ap-pumangol);
+  box-shadow: 0 0 0 8px rgba(var(--ap-green-rgb), 0.14);
 }
 
 .auth-card-icon.is-warning {
-  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-  box-shadow: 0 0 0 8px rgba(217, 119, 6, 0.12);
+  color: var(--ap-ink);
+  background: #CCD341;
+  box-shadow: 0 0 0 8px rgba(204, 211, 65, 0.2);
 }
 
 .login .auth-card-title {
@@ -1601,16 +1677,15 @@ body:has(.admin-shell) {
 .auth-card-alert {
   margin-bottom: 18px;
   padding: 10px 14px;
-  border-left: 3px solid #dc3545;
+  border-left: 3px solid var(--ap-red-text);
   border-radius: 6px;
   font-size: 14px;
-  color: #b42318;
-  background: rgba(220, 53, 69, 0.08);
+  color: var(--ap-red-text);
+  background: rgba(var(--ap-red-rgb), 0.08);
 }
 
 [data-theme="dark"] .auth-card-alert {
-  color: #fda29b;
-  background: rgba(220, 53, 69, 0.16);
+  background: rgba(var(--ap-red-rgb), 0.16);
 }
 
 .auth-card-footer {
@@ -1631,11 +1706,11 @@ body:has(.admin-shell) {
 
 .auth-card-footer a:hover {
   gap: 10px;
-  color: var(--green);
+  color: var(--ap-pumangol);
 }
 
 [data-theme="dark"] .auth-card-footer a {
-  color: #7fc4cf;
+  color: var(--ap-green);
 }
 
 @media (max-width: 575px) {
@@ -1767,7 +1842,7 @@ body:has(.admin-shell) {
 }
 
 .cms-bg-brand {
-  background: var(--blue);
+  background: var(--ap-ink);
 }
 
 .cms-bg-brand,
@@ -1777,6 +1852,11 @@ body:has(.admin-shell) {
 .cms-bg-brand .rich-text h2,
 .cms-bg-brand .rich-text h3,
 .cms-bg-brand .rich-text a {
+  color: #fff;
+}
+
+/* No tema escuro as ligações do site passam a verde; sobre o fundo Midnight continuam brancas. */
+html[data-theme="dark"] .site-public .cms-bg-brand .rich-text a {
   color: #fff;
 }
 
@@ -1898,7 +1978,7 @@ body:has(.admin-shell) {
 
 .admin-shell .admin-rte-btn:hover:not(:disabled),
 .admin-shell .admin-rte-btn.is-active {
-  background: rgb(14 79 91 / 10%);
+  background: color-mix(in srgb, var(--blue) 10%, transparent);
   color: var(--blue);
 }
 
@@ -1963,8 +2043,8 @@ body:has(.admin-shell) {
 .admin-shell .pb-alert-ok {
   padding: 0.625rem 0.875rem;
   border-radius: 0.5rem;
-  background: rgb(112 167 77 / 15%);
-  color: #4d7a32;
+  background: rgba(var(--ap-green-rgb), 0.12);
+  color: var(--green-text);
   font-size: 0.875rem;
 }
 
@@ -2088,7 +2168,7 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .pb-icon-actions button.is-danger:hover:not(:disabled) {
-  color: var(--red);
+  color: var(--ap-red-text);
 }
 
 .admin-shell .pb-icon-actions button:disabled {
@@ -2160,8 +2240,12 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .pb-locale-switch button.is-active {
-  background: var(--blue);
+  background: var(--ap-ink);
   color: #fff;
+}
+
+[data-theme="dark"] .admin-shell .pb-locale-switch button.is-active {
+  box-shadow: inset 0 0 0 1px var(--ap-green);
 }
 
 .admin-shell .pb-list {
@@ -2249,7 +2333,7 @@ body:has(.admin-shell) {
 .admin-shell .pb-preview-note {
   margin: 0;
   padding: 0.375rem 0.75rem;
-  background: rgb(245 158 11 / 12%);
+  background: color-mix(in srgb, var(--warning) 25%, transparent);
 }
 
 .admin-shell .pb-preview-frame {
@@ -2281,7 +2365,7 @@ body:has(.admin-shell) {
 
 .admin-shell .pb-block.is-expanded {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgb(14 79 91 / 10%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 10%, transparent);
 }
 
 .admin-shell .pb-drag-sm {
@@ -2308,7 +2392,7 @@ body:has(.admin-shell) {
   background: var(--gray);
   color: var(--body);
   font-size: 0.6875rem;
-  font-family: ui-monospace, monospace;
+  font-family: var(--ap-font);
   white-space: nowrap;
 }
 
@@ -2356,7 +2440,7 @@ body:has(.admin-shell) {
   margin-right: 0.25rem;
   border-radius: 50%;
   background: var(--secondary);
-  box-shadow: 0 0 0 3px rgb(112 167 77 / 25%);
+  box-shadow: 0 0 0 3px rgba(var(--ap-green-rgb), 0.25);
   vertical-align: middle;
 }
 
@@ -2370,7 +2454,12 @@ body:has(.admin-shell) {
 
 .pb-live [data-block-id]:hover,
 .pb-live [data-block-id][data-focused] {
-  outline-color: #0e4f5b;
+  outline-color: var(--ap-ink);
+}
+
+[data-theme="dark"] .pb-live [data-block-id]:hover,
+[data-theme="dark"] .pb-live [data-block-id][data-focused] {
+  outline-color: var(--ap-green);
 }
 
 .pb-live-edit {
@@ -2384,7 +2473,7 @@ body:has(.admin-shell) {
   padding: 0.375rem 0.75rem;
   border: 0;
   border-radius: 999px;
-  background: #0e4f5b;
+  background: var(--ap-ink);
   color: #fff;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -2513,7 +2602,7 @@ body:has(.admin-shell) {
 }
 
 .admin-shell .pb-picker-tabs button.is-active {
-  background: rgb(14 79 91 / 10%);
+  background: color-mix(in srgb, var(--blue) 10%, transparent);
   color: var(--blue);
   font-weight: 600;
 }
@@ -2554,14 +2643,14 @@ body:has(.admin-shell) {
 .admin-shell .pb-picker-item:hover,
 .admin-shell .pb-picker-item:focus-visible {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgb(14 79 91 / 10%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 10%, transparent);
   outline: none;
 }
 
 .admin-shell .pb-picker-item.is-paste {
   border-style: dashed;
   border-color: var(--blue);
-  background: rgb(14 79 91 / 4%);
+  background: color-mix(in srgb, var(--blue) 4%, transparent);
 }
 
 .admin-shell .pb-picker-icon {
@@ -2571,7 +2660,7 @@ body:has(.admin-shell) {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  background: rgb(14 79 91 / 8%);
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
   color: var(--blue);
   font-size: 1.25rem;
 }
@@ -2742,7 +2831,11 @@ body:has(.admin-shell) {
 }
 
 .site-modal-icon.is-success {
-  color: var(--secondary);
+  color: var(--ap-pumangol);
+}
+
+[data-theme="dark"] .site-modal-icon {
+  color: var(--ap-green);
 }
 
 .site-modal-course {
@@ -2783,6 +2876,24 @@ body:has(.admin-shell) {
   font-size: 15px;
 }
 
+/* O .border_btn do site é branco (pensado para secções escuras); no modal, que é claro, ficava invisível. */
+.site-public .site-modal-actions .border_btn {
+  color: var(--ap-text);
+  border-color: var(--ap-line-2);
+}
+
+.site-public .site-modal-actions .border_btn:hover,
+.site-public .site-modal-actions .border_btn:focus {
+  background: var(--ap-mist);
+  border-color: var(--ap-line-2);
+  color: var(--ap-text);
+}
+
+/* O preenchimento Midnight do template (::before) taparia o texto escuro no hover. */
+.site-public .site-modal-actions .border_btn::before {
+  display: none;
+}
+
 [data-theme="dark"] .site-modal-actions .border_btn {
   color: var(--title);
 }
@@ -2800,7 +2911,7 @@ body:has(.admin-shell) {
   flex-shrink: 0;
   margin-top: 0.125rem;
   font-size: 1.25rem;
-  color: var(--secondary);
+  color: var(--ap-pumangol);
 }
 
 .course-enrolled-badge {
@@ -2809,7 +2920,12 @@ body:has(.admin-shell) {
   gap: 0.25rem;
   font-size: 13px;
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--ap-pumangol);
+}
+
+[data-theme="dark"] .course-enrolled-notice i,
+[data-theme="dark"] .course-enrolled-badge {
+  color: var(--ap-green);
 }
 
 /* Formulário de empresas (/parceiros) */
@@ -2836,7 +2952,12 @@ body:has(.admin-shell) {
 .company-request-benefits i {
   flex: 0 0 auto;
   font-size: 1.375rem;
-  color: var(--secondary);
+  color: var(--ap-pumangol);
+}
+
+[data-theme="dark"] .company-request-benefits i,
+[data-theme="dark"] .company-request-success > i {
+  color: var(--ap-green);
 }
 
 .company-request-card {
@@ -2844,7 +2965,7 @@ body:has(.admin-shell) {
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--paper);
-  box-shadow: 0 12px 40px rgb(14 79 91 / 8%);
+  box-shadow: 0 12px 40px rgba(var(--ap-ink-rgb), 0.08);
 }
 
 .company-request-card h3 {
@@ -2874,12 +2995,16 @@ body:has(.admin-shell) {
   text-decoration: underline;
 }
 
+[data-theme="dark"] .company-request-card .form-check-label a {
+  color: var(--ap-green);
+}
+
 .company-request-error {
   margin: 1rem 0 0;
   padding: 0.625rem 0.875rem;
   border-radius: 8px;
-  background: rgb(239 68 68 / 10%);
-  color: #b91c1c;
+  background: rgba(var(--ap-red-rgb), 0.1);
+  color: var(--ap-red-text);
   font-size: 0.875rem;
 }
 
@@ -2899,7 +3024,7 @@ body:has(.admin-shell) {
 
 .company-request-success > i {
   font-size: 3.5rem;
-  color: var(--secondary);
+  color: var(--ap-pumangol);
 }
 
 .company-request-success p {
@@ -3008,11 +3133,11 @@ body:has(.admin-shell) {
 .admin-shell .reports-type:hover,
 .admin-shell .reports-type.is-active {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgb(14 79 91 / 10%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 10%, transparent);
 }
 
 .admin-shell .reports-type.is-active {
-  background: rgb(14 79 91 / 5%);
+  background: color-mix(in srgb, var(--blue) 5%, transparent);
 }
 
 .admin-shell .reports-recent {
@@ -3046,4 +3171,11 @@ body:has(.admin-shell) {
 .admin-shell .request-details dd {
   margin: 0;
   color: var(--title);
+}
+
+/* Ligações em texto corrido dentro do painel: sem isto herdam o cinzento do corpo e não parecem ligações. */
+.admin-shell .admin-empty a,
+.admin-shell .request-details a {
+  color: var(--blue);
+  text-decoration: underline;
 }

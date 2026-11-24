@@ -102,10 +102,14 @@ export default function FreeEnrollmentModal({
 								</p>
 							)}
 							<div className="site-modal-actions justify-content-center">
-								<button type="button" className="border_btn round_btn" onClick={onClose}>
+								<button
+									type="button"
+									className="border_btn round_btn"
+									onClick={onClose}
+								>
 									{t("freeEnrollment.close")}
 								</button>
-								<Link href="/aluno/cursos" className="blue_btn round_btn">
+								<Link href="/aluno/cursos" className="blue_btn round_btn btn-brand-dark">
 									{t("courseDetails.goToMyCourses")}
 								</Link>
 							</div>
@@ -122,7 +126,7 @@ export default function FreeEnrollmentModal({
 							</p>
 							<p className="site-modal-note">{t("freeEnrollment.confirmNote")}</p>
 							{step.name === "confirm" && step.error ? (
-								<p className="text-danger mb-0">{step.error}</p>
+								<p className="mb-0" style={{ color: "var(--ap-red-text)" }}>{step.error}</p>
 							) : null}
 							<div className="site-modal-actions">
 								<button
@@ -135,7 +139,7 @@ export default function FreeEnrollmentModal({
 								</button>
 								<button
 									type="button"
-									className="blue_btn round_btn"
+									className="blue_btn round_btn btn-brand-dark"
 									onClick={handleConfirm}
 									disabled={submitting}
 								>

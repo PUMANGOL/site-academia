@@ -14,13 +14,6 @@ function SectionTitle({ eyebrow, title, center }: { eyebrow: string; title: stri
 		<div className={`section-title mb-4${center ? " text-center" : ""}`}>
 			{eyebrow ? <span>{eyebrow}</span> : null}
 			{title ? <h2>{title}</h2> : null}
-			<Image
-				src="/assets/img/shapes/title.svg"
-				alt=""
-				width={216}
-				height={20}
-				className="d-inline-block"
-			/>
 		</div>
 	);
 }
@@ -43,7 +36,7 @@ export function LatestNewsBlock({ data, posts }: { data?: BlockData; posts: Post
 					))}
 				</div>
 				<div className="mt-4">
-					<Link href="/noticias" className="blue_btn round_btn">
+					<Link href="/noticias" className={`blue_btn round_btn${text("background") === "brand" ? "" : " btn-brand-dark"}`}>
 						{t("news.viewAll")} <i className="ph ph-arrow-right" aria-hidden />
 					</Link>
 				</div>
@@ -79,7 +72,10 @@ export function ImageTextBlock({ data }: { data?: BlockData }) {
 						<SectionTitle eyebrow={text("eyebrow")} title={text("title")} />
 						<RichText doc={richText("body")} />
 						{buttonLabel ? (
-							<Link href={text("buttonHref") || "/"} className="blue_btn round_btn mt-3">
+							<Link
+								href={text("buttonHref") || "/"}
+								className={`blue_btn round_btn${text("background") === "brand" ? "" : " btn-brand-dark"} mt-3`}
+							>
 								{buttonLabel} <i className="ph ph-arrow-right" aria-hidden />
 							</Link>
 						) : null}

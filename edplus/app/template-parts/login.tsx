@@ -149,7 +149,7 @@ export default function Login() {
 
 								<div className="form-group col-lg-12">
 									<button
-										className="blue_btn round_btn"
+										className="blue_btn round_btn btn-brand-dark"
 										type="submit"
 										name="submit"
 										disabled={pending}

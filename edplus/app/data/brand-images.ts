@@ -1,6 +1,10 @@
 export const brandImages = {
 	logoColor: "/assets/img/academia/logo-color.png",
 	logoWhite: "/assets/img/academia/logo-white.png",
+	logoColorCompact: "/assets/img/academia/logo-color-compact.png",
+	logoWhiteCompact: "/assets/img/academia/logo-white-compact.png",
+	symbolColor: "/assets/img/academia/symbol-color.png",
+	symbolWhite: "/assets/img/academia/symbol-white.png",
 	heroGroup: "/assets/img/academia/hero-group.jpg",
 	heroStage: "/assets/img/academia/hero-stage.jpg",
 	heroBraids: "/assets/img/academia/hero-braids.jpg",

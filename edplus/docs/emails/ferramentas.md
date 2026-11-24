@@ -48,7 +48,7 @@ Em desenvolvimento: http://localhost:15672, com o utilizador `academia`, a palav
 | `RABBITMQ_EMAIL_QUEUE` | `academia.emails` | Next, worker | Nome base da exchange e das filas |
 | `SMTP_HOST`, `SMTP_PORT` | —, `587` | Worker | Servidor SMTP |
 | `SMTP_USER`, `SMTP_PASSWORD` | — | Worker | Credenciais da caixa de envio |
-| `MAIL_FROM` | `SMTP_USER` | Worker | Remetente (`"Pumangol Academy <no.reply@pumangol.co.ao>"`) |
+| `MAIL_FROM` | `SMTP_USER` | Worker | Remetente (`"Academia Pumangol <no.reply@pumangol.co.ao>"`) |
 | `FEEDBACK_URL` | página `/contact` | Worker | Link do formulário de feedback (ex.: Microsoft Forms) |
 | `MAIL_DRY_RUN` | `false` | Worker | `true` = não envia, só escreve no log |
 | `MAIL_MIN_INTERVAL_MS` | `2000` | Worker | Intervalo mínimo entre envios |

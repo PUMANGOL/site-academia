@@ -63,7 +63,7 @@ export default function CourseCard({
 			<i className="ph ph-check-circle" aria-hidden /> {t("courseDetails.enrolledBadge")}
 		</span>
 	) : pricing.onRequest ? (
-		<Link href="/contact" className={variant === "catalog" ? "ap-catalog-enroll" : "blue_btn round_btn py-1 px-3"}>
+		<Link href="/contact" className={variant === "catalog" ? "ap-catalog-enroll" : "blue_btn round_btn btn-brand-dark py-1 px-3"}>
 			<span>{t("courses.onRequestCta")}</span>
 			{variant === "catalog" ? <i className="ph ph-arrow-right" aria-hidden /> : null}
 		</Link>
@@ -80,7 +80,7 @@ export default function CourseCard({
 	) : (
 		<button
 			type="button"
-			className="blue_btn round_btn py-1 px-3"
+			className="blue_btn round_btn btn-brand-dark py-1 px-3"
 			onClick={handleAdd}
 			disabled={adding}
 			style={{ fontSize: 13 }}
@@ -241,13 +241,13 @@ export default function CourseCard({
 								<i className="ph ph-check-circle" aria-hidden /> {t("courseDetails.enrolledBadge")}
 							</span>
 						) : pricing.onRequest ? (
-							<Link href="/contact" className="blue_btn round_btn py-1 px-3" style={{ fontSize: 13 }}>
+							<Link href="/contact" className="blue_btn round_btn btn-brand-dark py-1 px-3" style={{ fontSize: 13 }}>
 								{t("courses.onRequestCta")}
 							</Link>
 						) : (
 							<button
 								type="button"
-								className="blue_btn round_btn py-1 px-3"
+								className="blue_btn round_btn btn-brand-dark py-1 px-3"
 								onClick={handleAdd}
 								disabled={adding}
 								style={{ fontSize: 13 }}

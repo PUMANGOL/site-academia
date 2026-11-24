@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useWOW } from "@/app/hooks/useWOW";
 import { useHeaderOffset, usePublicSite } from "@/app/hooks/useHeaderOffset";
-import Image from "next/image";
 import Link from "next/link";
 import PopupSearch from "./popupSearch";
 // import MiniCart from "./miniCart";
@@ -48,8 +47,7 @@ export default function Header() {
 							<div className="site-logo">
 								<Link href="/">
 									<SiteLogo
-										width={220}
-										height={65}
+										height={44}
 										priority
 										inverted={overlay && !scrolled}
 									/>
@@ -151,17 +149,26 @@ export default function Header() {
 								<Link
 									href="#"
 									className="menu_btn sidebar__toggle align-self-center"
+									aria-label="Menu"
 									onClick={(e) => {
 										e.preventDefault();
 										setOffcanvasOpen(true);
 									}}
 								>
-									<Image
-										src="/assets/img/menu.svg"
-										alt="Menu"
-										width={32}
-										height={32}
-									/>
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="1.5"
+										aria-hidden="true"
+									>
+										<rect x="1.5" y="1.5" width="8.7" height="8.7" rx="1.3" />
+										<rect x="13.75" y="1.5" width="8.7" height="8.7" rx="1.3" />
+										<rect x="1.5" y="13.75" width="8.7" height="8.7" rx="1.3" />
+										<circle cx="18.1" cy="18.1" r="4.35" />
+									</svg>
 								</Link>
 							</div>
 						</div>

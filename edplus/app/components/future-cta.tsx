@@ -47,13 +47,13 @@ export default function FutureCta({ data }: { data?: BlockData }) {
 			<div className="container">
 				<div className="ap-future-inner sec-in">
 					<div className="section-title mb-0">
-						<span className="ap-on-dark">
+						<span style={{ color: "#FFFFFF" }}>
 							<BrandMark variant="dark" />
 							{text("eyebrow")}
 						</span>
 					</div>
 					<h2>
-						{text("title")} <span className="ap-hl-lime">{text("highlight")}</span>
+						{text("title")} <span className="ap-hl">{text("highlight")}</span>
 					</h2>
 					<p>{text("text")}</p>
 					<div className="ap-future-actions">

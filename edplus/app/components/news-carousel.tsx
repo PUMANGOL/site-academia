@@ -11,9 +11,9 @@ import { pickLocale } from "@/lib/i18n-content";
 
 function tagStyle(category: string) {
 	const key = category.toLowerCase();
-	if (key.startsWith("event")) return { background: "#10505C", color: "#FFFFFF" };
-	if (key.startsWith("academ")) return { background: "#70A84C", color: "#0B3B45" };
-	return { background: "#FFFFFF", color: "#10505C" };
+	if (key.startsWith("event")) return { background: "var(--ap-ink)", color: "#FFFFFF" };
+	if (key.startsWith("academ")) return { background: "var(--ap-pumangol)", color: "#FFFFFF" };
+	return { background: "#FFFFFF", color: "var(--ap-ink)" };
 }
 
 export default function NewsCarousel({ data, posts }: { data?: BlockData; posts: PostListItem[] }) {
@@ -77,7 +77,7 @@ export default function NewsCarousel({ data, posts }: { data?: BlockData; posts:
 								{text("eyebrow")}
 							</span>
 							<h2>
-								{text("title")} <span className="ap-hl">{text("titleHighlight")}</span>
+								{text("title")} <span className="ap-hl ap-hl-strong">{text("titleHighlight")}</span>
 							</h2>
 						</div>
 						<Link href="/noticias" className="ap-text-link mt-3 d-inline-flex">

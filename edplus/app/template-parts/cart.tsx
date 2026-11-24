@@ -18,7 +18,7 @@ export default function ShoppingCart() {
 						{cart.items.length === 0 ? (
 							<div className="cart-empty">
 								<p>{t("cart.empty")}</p>
-								<Link href="/courses" className="blue_btn round_btn">
+								<Link href="/courses" className="blue_btn round_btn btn-brand-dark">
 									{t("cartPage.browseCourses")}
 								</Link>
 							</div>
@@ -141,7 +141,7 @@ export default function ShoppingCart() {
 								</div>
 
 								<div className="wc-proceed-to-checkout">
-									<Link href="/checkout" className="blue_btn round_btn">
+									<Link href="/checkout" className="blue_btn round_btn btn-brand-dark">
 										{t("cartPage.proceed")}
 									</Link>
 								</div>

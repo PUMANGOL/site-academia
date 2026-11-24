@@ -21,15 +21,15 @@ import {
 
 const TIME_ZONE = "Africa/Luanda";
 const BRAND = "Academia Pumangol";
-const BRAND_COLOR = "FF0E505C";
-const ACCENT_COLOR = "FF71A74C";
+const BRAND_COLOR = "FF07525D";
+const ACCENT_COLOR = "FF75A63D";
 const MUTED_COLOR = "FF6B7280";
 const ZEBRA_COLOR = "FFF4F6F9";
 const BORDER_COLOR = "FFD1D5DB";
 
-// Versão do logótipo usada nos emails (480×147 px, sem margens).
+// Versão do logótipo usada nos emails: oficial a cores, sem assinatura (496×139 px, sem margens).
 const LOGO_PATH = fileURLToPath(new URL("../public/assets/img/email/logo.png", import.meta.url));
-const LOGO_SIZE = { width: 190, height: 58 };
+const LOGO_SIZE = { width: 200, height: 56 };
 
 // Linhas do cabeçalho: 1–3 logótipo, 4 título, 5 emissão, 6 filtros, 7 filete, 8 cabeçalhos da tabela.
 const HEADER_ROW = 8;

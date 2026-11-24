@@ -117,8 +117,8 @@ export default function CursorLine() {
 		<svg ref={rootRef} className="ap-cursor-line" aria-hidden="true">
 			<defs>
 				<linearGradient ref={fadeRef} id="ap-cursor-stroke" gradientUnits="userSpaceOnUse">
-					<stop offset="0" stopColor="#70A84C" stopOpacity="0" />
-					<stop offset="1" stopColor="#70A84C" stopOpacity="1" />
+					<stop offset="0" stopColor="var(--ap-green, #75A63D)" stopOpacity="0" />
+					<stop offset="1" stopColor="var(--ap-green, #75A63D)" stopOpacity="1" />
 				</linearGradient>
 			</defs>
 			<path ref={pathRef} />

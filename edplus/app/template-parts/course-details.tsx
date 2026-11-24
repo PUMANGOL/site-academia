@@ -289,18 +289,18 @@ export default function CourseDetails({ course }: { course: CourseDetail }) {
 											<i className="ph ph-check-circle" aria-hidden />
 											{t("courseDetails.enrolledNotice")}
 										</p>
-										<Link href="/aluno/cursos" className="blue_btn round_btn py40">
+										<Link href="/aluno/cursos" className="blue_btn round_btn btn-brand-dark py40">
 											{t("courseDetails.goToMyCourses")} <i className="ph ph-arrow-right"></i>
 										</Link>
 									</>
 								) : pricing.onRequest ? (
-									<Link href="/contact" className="blue_btn round_btn py40">
+									<Link href="/contact" className="blue_btn round_btn btn-brand-dark py40">
 										{t("courses.onRequestCta")} <i className="ph ph-arrow-right"></i>
 									</Link>
 								) : (
 									<button
 										type="button"
-										className="blue_btn round_btn py40"
+										className="blue_btn round_btn btn-brand-dark py40"
 										onClick={handleEnroll}
 										disabled={adding || soldOut}
 									>

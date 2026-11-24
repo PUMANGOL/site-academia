@@ -108,7 +108,7 @@ export default function NewsList({ posts, data }: { posts: PostListItem[]; data?
 					<div className="news-list-foot">
 						<button
 							type="button"
-							className="blue_btn round_btn"
+							className="blue_btn round_btn btn-brand-dark"
 							onClick={() => setVisible((value) => value + pageSize)}
 						>
 							{t("news.loadMore")} ({filtered.length - visible})

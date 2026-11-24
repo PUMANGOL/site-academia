@@ -46,7 +46,7 @@ export default function Offcanvas({
                             <div className="offcanvas__top d-flex justify-content-between align-items-center">
                                 <div className="offcanvas__logo">
                                     <Link href="/" onClick={closeMenu}>
-                                        <SiteLogo width={200} height={59} />
+                                        <SiteLogo height={40} />
                                     </Link>
                                 </div>
 

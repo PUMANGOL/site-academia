@@ -64,10 +64,11 @@ export default function DashboardCharts({ data }: { data: ChartsData }) {
 		})
 		.filter((item) => item.value > 0);
 
-	const categoryData = data.coursesByCategory.map((item, index) => ({
+	// Série única: todas as barras em Midnight Green, a cor principal da marca.
+	const categoryData = data.coursesByCategory.map((item) => ({
 		name: item.name,
 		value: item.value,
-		fill: COLORS[index % COLORS.length],
+		fill: COLORS[0],
 	}));
 
 	const monthData = data.activityByMonth.map((item) => ({

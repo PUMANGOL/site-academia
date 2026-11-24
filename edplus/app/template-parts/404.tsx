@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { brandImages } from "@/app/data/brand-images";
 import { useI18n } from "@/app/i18n/I18nProvider";
 
 export default function ErrorPage() {
@@ -12,15 +12,30 @@ export default function ErrorPage() {
 			<div className="container">
 				<div className="row">
 					<div className="col-xl-7 mx-auto text-center wow fadeIn">
-						<Image
-							src="/assets/img/404.jpg"
-							alt="404"
-							width={800}
-							height={500}
-						/>
+						{/* Símbolo oficial (os dois arcos), 505×321: versão a cores no tema claro, negativa no escuro. */}
+						<svg
+							width="189"
+							height="120"
+							viewBox="0 0 505 321"
+							aria-hidden="true"
+							className="d-inline-block mb-5"
+						>
+							<image
+								href={brandImages.symbolColor}
+								width="505"
+								height="321"
+								className="logo-light"
+							/>
+							<image
+								href={brandImages.symbolWhite}
+								width="505"
+								height="321"
+								className="logo-dark"
+							/>
+						</svg>
 						<h2>{t("notFound.title")}</h2>
 						<p>{t("notFound.text")}</p>
-						<Link href="/" className="blue_btn round_btn py40">
+						<Link href="/" className="blue_btn round_btn btn-brand-dark py40">
 							<i className="ph ph-house-line"></i> {t("notFound.back")}
 						</Link>
 					</div>

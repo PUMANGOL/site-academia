@@ -29,7 +29,7 @@ export default function NewsDetails({ post }: { post: PostDetail }) {
 					) : null}
 					<RichText doc={body} />
 					<div className="mt-5">
-						<Link href="/noticias" className="blue_btn round_btn">
+						<Link href="/noticias" className="blue_btn round_btn btn-brand-dark">
 							<i className="ph ph-arrow-left" aria-hidden />
 							<span>{t("news.back")}</span>
 						</Link>

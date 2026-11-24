@@ -58,7 +58,7 @@ export default function ResetPassword() {
 									</span>
 									<h4 className="auth-card-title">{t("auth.resetInvalidTitle")}</h4>
 									<p className="auth-card-text">{t("auth.resetInvalid")}</p>
-									<Link href="/recuperar-password" className="blue_btn round_btn">
+									<Link href="/recuperar-password" className="blue_btn round_btn btn-brand-dark">
 										{t("auth.requestNewLink")} <i className="ph ph-arrow-right"></i>
 									</Link>
 								</div>
@@ -69,7 +69,7 @@ export default function ResetPassword() {
 									</span>
 									<h4 className="auth-card-title">{t("auth.resetDoneTitle")}</h4>
 									<p className="auth-card-text">{t("auth.resetDone")}</p>
-									<Link href="/login" className="blue_btn round_btn">
+									<Link href="/login" className="blue_btn round_btn btn-brand-dark">
 										{t("auth.signIn")} <i className="ph ph-arrow-right"></i>
 									</Link>
 								</div>
@@ -115,7 +115,7 @@ export default function ResetPassword() {
 
 										{error ? <div className="auth-card-alert">{error}</div> : null}
 
-										<button className="blue_btn round_btn" type="submit" disabled={pending}>
+										<button className="blue_btn round_btn btn-brand-dark" type="submit" disabled={pending}>
 											{pending ? t("auth.resetting") : t("auth.resetSubmit")}{" "}
 											<i className="ph ph-arrow-right"></i>
 										</button>

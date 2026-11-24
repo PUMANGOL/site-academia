@@ -26,13 +26,6 @@ export default function Features({ data }: { data?: BlockData }) {
 					<div className="section-title text-center wow fadeInUp">
 						{eyebrow ? <span>{eyebrow}</span> : null}
 						{title ? <h2>{title}</h2> : null}
-						<Image
-							src="/assets/img/shapes/title.svg"
-							alt=""
-							width={216}
-							height={19}
-							className="d-inline-block"
-						/>
 					</div>
 				) : null}
 				<Swiper

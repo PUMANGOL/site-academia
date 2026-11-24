@@ -56,14 +56,6 @@ export default function AboutTwo({
 									</div>
 								))}
 							</div>
-
-							<Image
-								src="/assets/img/shapes/ab_dots.svg"
-								className="ab_btm_shape position-absolute"
-								alt=""
-								width={120}
-								height={120}
-							/>
 						</div>
 					</div>
 
@@ -76,13 +68,6 @@ export default function AboutTwo({
 								</span>
 
 								<h2>{text("title")}</h2>
-
-								<Image
-									src="/assets/img/shapes/title.svg"
-									alt=""
-									width={216}
-									height={20}
-								/>
 							</div>
 
 							<p className="wow fadeInUp">{text("text")}</p>
@@ -110,19 +95,11 @@ export default function AboutTwo({
 							</div>
 
 							{buttonVisible && buttonLabel ? (
-								<Link href={buttonHref || "/about"} className="blue_btn round_btn wow fadeInUp">
+								<Link href={buttonHref || "/about"} className="blue_btn round_btn btn-brand-dark wow fadeInUp">
 									{buttonLabel}{" "}
 									<i className="ph ph-arrow-right"></i>
 								</Link>
 							) : null}
-
-							<Image
-								src="/assets/img/icons/about/ed_cap.svg"
-								className="ab_book_shape aniupDown position-absolute"
-								alt=""
-								width={120}
-								height={120}
-							/>
 						</div>
 					</div>
 				</div>

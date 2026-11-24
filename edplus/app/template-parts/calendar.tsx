@@ -54,7 +54,7 @@ export default function CalendarContent({ courses }: { courses: CourseListItem[]
 											: pricing.isFree
 											? t("courses.free")
 											: formatPrice(pricing.price, course.currency)}</p>
-									<Link href={`/courses/${course.slug}`} className="blue_btn round_btn">
+									<Link href={`/courses/${course.slug}`} className="blue_btn round_btn btn-brand-dark">
 										{t("calendar.cta")}
 									</Link>
 								</article>

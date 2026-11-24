@@ -85,7 +85,7 @@ export default function ForgotPassword() {
 											) : null}
 										</div>
 
-										<button className="blue_btn round_btn" type="submit" disabled={pending}>
+										<button className="blue_btn round_btn btn-brand-dark" type="submit" disabled={pending}>
 											{pending ? t("auth.sending") : t("auth.sendLink")}{" "}
 											<i className="ph ph-arrow-right"></i>
 										</button>

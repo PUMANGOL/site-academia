@@ -29,13 +29,6 @@ export default function TestimonialsTwo({ data }: { data?: BlockData }) {
 								{text("title")} <br />
 								{text("title2")}
 							</h2>
-
-							<Image
-								src="/assets/img/shapes/title.svg"
-								alt=""
-								width={216}
-								height={19}
-							/>
 						</div>
 					</div>
 
@@ -57,10 +50,10 @@ export default function TestimonialsTwo({ data }: { data?: BlockData }) {
 						<div
 							className="test_badge"
 							style={{
-								backgroundImage: "url('/assets/img/bg/testimonials2.jpg')",
+								backgroundColor: "var(--ap-ink)",
 							}}
 						>
-							<h4>{rating}</h4>
+							<h4 style={{ color: "#FFFFFF" }}>{rating}</h4>
 
 							<i className="fa-solid fa-star"></i>
 							<i className="fa-solid fa-star"></i>

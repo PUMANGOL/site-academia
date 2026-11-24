@@ -257,8 +257,8 @@ export const blockDefinitions: BlockDef[] = [
 						kind: "select",
 						fallback: "blue",
 						options: [
-							{ value: "blue", label: "Azul" },
-							{ value: "green", label: "Verde" },
+							{ value: "blue", label: "Midnight Green" },
+							{ value: "green", label: "Verde Pumangol" },
 						],
 					},
 				],
@@ -287,7 +287,7 @@ export const blockDefinitions: BlockDef[] = [
 	},
 	{
 		type: "introStats",
-		label: "Cria futuro (introdução)",
+		label: "Cria futuro. (introdução)",
 		description: "Título, parceria, manifesto e números da Academia.",
 		icon: "ph-chart-line-up",
 		fields: [

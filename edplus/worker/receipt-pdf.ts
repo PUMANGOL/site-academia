@@ -12,8 +12,8 @@ const BRAND = "Academia Pumangol";
 const ADDRESS = "Talatona, Luanda, Angola";
 const TIME_ZONE = "Africa/Luanda";
 
-const BRAND_COLOR = "#0E505C";
-const ACCENT_COLOR = "#71A74C";
+const BRAND_COLOR = "#07525D";
+const ACCENT_COLOR = "#75A63D";
 const TEXT_COLOR = "#1F2933";
 const MUTED_COLOR = "#6B7280";
 const RULE_COLOR = "#D1D5DB";
@@ -24,8 +24,8 @@ const FONT_BOLD = "Helvetica-Bold";
 const PAGE_MARGIN = 56;
 const LABEL_WIDTH = 150;
 
-// Logótipo em alta resolução (2000×591 px) com margens transparentes: a área útil
-// (x 312–1715, y 90–483) é recortada para alinhar o desenho com a margem da página.
+// Logótipo oficial a cores com a assinatura "Cria futuro." (1149×428 px, sem margens
+// transparentes): o desenho fica alinhado com a margem da página.
 const LOGO_PATH = fileURLToPath(new URL("../public/assets/img/logo.png", import.meta.url));
 const LOGO_WIDTH = 168;
 

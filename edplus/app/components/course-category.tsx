@@ -90,7 +90,7 @@ export default function CourseCategory({ data }: { data?: BlockData }) {
 								<span className="ap-acc-vt">{title}</span>
 								<span className="ap-acc-more">
 									<span className="disp">{title}</span>
-									<span className="d-block mt-2" style={{ fontSize: 15, color: "#D6E6E2", lineHeight: 1.55 }}>
+									<span className="d-block mt-2" style={{ fontSize: 15, color: "#FFFFFF", lineHeight: 1.55 }}>
 										{desc}
 									</span>
 									<span className="ap-acc-pill">{category.programs}</span>

@@ -4,7 +4,6 @@ import { useWOW } from "@/app/hooks/useWOW";
 import { useHeaderOffset, usePublicSite } from "@/app/hooks/useHeaderOffset";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import PopupSearch from "./popupSearch";
 import Offcanvas from "./offCanvas";
 import LanguageSwitcher from "@/app/i18n/LanguageSwitcher";
@@ -84,7 +83,7 @@ export default function Header() {
 
 									<div className="site-logo">
 										<Link href="/">
-											<SiteLogo width={220} height={65} priority />
+											<SiteLogo height={44} priority />
 										</Link>
 									</div>
 
@@ -249,14 +248,23 @@ export default function Header() {
 									<button
 										className="menu_btn sidebar__toggle align-self-center"
 										type="button"
+										aria-label="Menu"
 										onClick={() => setOffcanvasOpen(true)}
 									>
-										<Image
-											src="/assets/img/menu.svg"
-											alt="Menu"
-											width={28}
-											height={28}
-										/>
+										<svg
+											width="24"
+											height="24"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeWidth="1.5"
+											aria-hidden="true"
+										>
+											<rect x="1.5" y="1.5" width="8.7" height="8.7" rx="1.3" />
+											<rect x="13.75" y="1.5" width="8.7" height="8.7" rx="1.3" />
+											<rect x="1.5" y="13.75" width="8.7" height="8.7" rx="1.3" />
+											<circle cx="18.1" cy="18.1" r="4.35" />
+										</svg>
 									</button>
 
 								</div>

@@ -46,12 +46,12 @@ export default function AcademiaAbout() {
 							text: t("academia.missionText"),
 						},
 						{
-							icon: "/assets/img/icons/about/2.svg",
+							icon: "/assets/img/icons/about/1.svg",
 							title: t("academia.vision"),
 							text: t("academia.visionText"),
 						},
 						{
-							icon: "/assets/img/icons/about/2.svg",
+							icon: "/assets/img/icons/about/3.svg",
 							title: t("academia.values"),
 							text: t("academia.valuesText"),
 						},

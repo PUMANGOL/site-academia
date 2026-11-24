@@ -24,22 +24,10 @@ export default function CTA({ data }: { data?: BlockData }) {
 							key={index}
 							className={`${cards.length === 1 ? "col-12" : "col-lg-6 col-12"} d-flex`}
 						>
-							<div
-								className={`cta2 ${itemText(card, "color") === "green" ? "color_green" : ""}`}
-								style={{
-									backgroundImage: "url(/assets/img/bg/cta_bg.svg)",
-								}}
-							>
+							<div className={`cta2 ${itemText(card, "color") === "green" ? "color_green" : ""}`}>
 								<div className="cta-content wow fadeInUp">
 									<h2>
 										{itemText(card, "title")} <span>{highlight}</span>
-										<Image
-											src="/assets/img/shapes/cta_line.svg"
-											alt=""
-											width={120}
-											height={20}
-											className="ctitle_shape"
-										/>
 									</h2>
 
 									<p>{itemText(card, "text")}</p>
@@ -64,14 +52,6 @@ export default function CTA({ data }: { data?: BlockData }) {
 										unoptimized={isExternal(image)}
 									/>
 								) : null}
-
-								<Image
-									src="/assets/img/shapes/ccircle.svg"
-									alt=""
-									width={150}
-									height={150}
-									className="ccircle_shape"
-								/>
 							</div>
 						</div>
 					);

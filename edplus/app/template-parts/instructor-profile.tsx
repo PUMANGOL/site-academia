@@ -67,7 +67,7 @@ export default function InstructorProfile({
 										))}
 									</>
 								) : null}
-								<Link href="/instructors" className="blue_btn round_btn mt-3">
+								<Link href="/instructors" className="blue_btn round_btn btn-brand-dark mt-3">
 									<i className="ph ph-arrow-left" aria-hidden /> {t("instructorPage.back")}
 								</Link>
 							</div>

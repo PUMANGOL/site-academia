@@ -29,7 +29,7 @@ export default function ContentPage({
 							<p key={index}>{paragraph}</p>
 						))}
 						{ctaHref && ctaLabel ? (
-							<Link href={ctaHref} className="blue_btn round_btn mt-3">
+							<Link href={ctaHref} className="blue_btn round_btn btn-brand-dark mt-3">
 								{ctaLabel}
 								<i className="ph ph-arrow-right"></i>
 							</Link>

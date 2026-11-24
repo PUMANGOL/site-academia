@@ -168,7 +168,7 @@ export default function RegisterPage() {
 									<button
 										type="submit"
 										name="submit"
-										className="blue_btn round_btn"
+										className="blue_btn round_btn btn-brand-dark"
 										disabled={pending}
 									>
 										{pending

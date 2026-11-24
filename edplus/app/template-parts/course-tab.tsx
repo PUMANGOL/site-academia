@@ -180,7 +180,7 @@ export default function CourseTabs() {
 										placeholder={t("courseDetails.writeReview")}
 									></textarea>
 									<br />
-									<button type="submit" className="blue_btn round_btn py40">
+									<button type="submit" className="blue_btn round_btn btn-brand-dark py40">
 										{t("courseDetails.submitReview")}
 									</button>
 								</form>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 
@@ -16,6 +16,7 @@ import "@/public/assets/bootstrap/css/academia.css";
 import AboutVideoEngine from "./components/about-video-engine";
 import ChatFab from "./layouts/chat-fab";
 import CursorLine from "./components/cursor-line";
+import { InlineScript } from "./components/inline-script";
 import Preloader from "./layouts/preloader";
 import { I18nProvider } from "./i18n/I18nProvider";
 import { CartProvider } from "./providers/cart-provider";
@@ -24,18 +25,10 @@ import { ThemeProvider } from "./providers/theme-provider";
 // Applied before first paint so the saved theme never flashes the wrong palette.
 const themeBootstrap = `(function(){try{var t=localStorage.getItem("academia-theme");if(t!=="light"&&t!=="dark"){t="light"}var r=document.documentElement;r.dataset.theme=t;r.dataset.bsTheme=t;r.style.colorScheme=t}catch(e){}})();`;
 
-const figtree = Figtree({
+const montserrat = Montserrat({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700", "800"],
 	display: "swap",
-	variable: "--font-figtree",
-});
-
-const bricolage = Bricolage_Grotesque({
-	subsets: ["latin"],
-	weight: ["500", "600", "700", "800"],
-	display: "swap",
-	variable: "--font-bricolage",
+	variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -53,18 +46,12 @@ export default function RootLayout({
 			lang="pt"
 			data-bs-theme="light"
 			data-theme="light"
-			className={`${figtree.variable} ${bricolage.variable}`}
+			className={montserrat.variable}
 			suppressHydrationWarning
 		>
 			<head>
-				<script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+				<InlineScript html={themeBootstrap} />
 
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;600;700&display=swap"
-					rel="stylesheet"
-				/>
 				<link
 					href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
 					rel="stylesheet"

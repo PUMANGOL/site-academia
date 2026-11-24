@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import SiteLogo from "@/app/components/site-logo";
 import { useI18n } from "@/app/i18n/I18nProvider";
 
 export default function Footer() {
@@ -68,7 +68,7 @@ export default function Footer() {
 
         <footer
             className="footer-area"
-            style={{ backgroundImage: "url('/assets/img/bg/footer2.jpg')" }}
+            style={{ backgroundColor: "var(--ap-ink, #07525D)" }}
         >
             <div className="container">
                 <div className="row">
@@ -173,12 +173,7 @@ export default function Footer() {
 
                         <div className="col-md-6 col-12 text-md-start text-center">
                             <Link href="/">
-                                <Image
-                                    src="/assets/img/logo2.png"
-                                    alt="Academia Pumangol"
-                                    width={200}
-                                    height={59}
-                                />
+                                <SiteLogo height={50} inverted />
                             </Link>
                         </div>
 

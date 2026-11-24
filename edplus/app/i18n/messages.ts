@@ -62,7 +62,7 @@ export const messages = {
 			viewAll: "Ver todos os resultados ({count})",
 		},
 		banner: {
-			keepLearning: "Academia Pumangol · Cria futuro",
+			keepLearning: "Academia Pumangol · Cria futuro.",
 			title: "O futuro não se espera. Cria-se.",
 			titleFrom: "",
 			text: "Formação executiva e técnica para quem lidera, gere e opera em Angola. Programas desenhados com parceiros internacionais e aplicação imediata na sua organização.",
@@ -87,7 +87,7 @@ export const messages = {
 			chipProgramsSub: "Set — Dez 2026 · Luanda",
 			chipTrainers: "Formadores internacionais",
 			chipTrainersSub: "Prática de gestão global",
-			slide1Tag: "Academia Pumangol · Cria futuro",
+			slide1Tag: "Academia Pumangol · Cria futuro.",
 			slide1Title: "O futuro não se espera. Cria-se.",
 			slide1Text: "Formação executiva e técnica para quem lidera, gere e opera em Angola. Programas desenhados com parceiros internacionais e aplicação imediata na sua organização.",
 			slide1Label: "A Academia",

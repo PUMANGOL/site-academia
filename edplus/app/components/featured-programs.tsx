@@ -19,7 +19,7 @@ export default function FeaturedPrograms({ data }: { data?: BlockData }) {
 				<div className="ap-sec-split sec-in">
 					<div>
 						<div className="section-title mb-0">
-							<span className="ap-on-dark">
+							<span>
 								<BrandMark variant="dark" />
 								{text("eyebrow")}
 							</span>

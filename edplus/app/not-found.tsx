@@ -1,4 +1,4 @@
-import Header from "./layouts/header1";
+import Header from "./layouts/header2";
 import Banner from './components/banner';
 import NotFoundPage from './template-parts/404';
 import Footer from "./layouts/foooter2";

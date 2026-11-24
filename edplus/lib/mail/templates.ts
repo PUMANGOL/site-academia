@@ -18,19 +18,20 @@ export type MailAttachment = {
 };
 
 const BRAND = "Academia Pumangol";
-const BRAND_COLOR = "#0E505C";
-const ACCENT_COLOR = "#71A74C";
+const BRAND_COLOR = "#07525D";
+const ACCENT_COLOR = "#75A63D";
+const CTA_COLOR = "#00764A";
 const TEXT_COLOR = "#1F2933";
 const MUTED_COLOR = "#6B7280";
 const BORDER_COLOR = "#E5E7EB";
 const ADDRESS = "Talatona, Luanda, Angola";
-const FONT = "'Figtree','Segoe UI',Arial,Helvetica,sans-serif";
-const DISPLAY = "'Bricolage Grotesque','Figtree','Segoe UI',Arial,sans-serif";
+const FONT = "Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif";
 
 // Logótipo embutido como anexo inline (CID) pelo worker: aparece mesmo sem o site acessível
 // e não é bloqueado como imagem remota pela maioria dos clientes.
+// Versão oficial a cores sem assinatura (496×139 px), para fundo branco.
 export const LOGO_CID = "logo@pumangol-academy";
-export const LOGO_FILE = "public/assets/img/logo.png";
+export const LOGO_FILE = "public/assets/img/email/logo.png";
 
 function escapeHtml(value: string) {
 	return value
@@ -85,7 +86,7 @@ function renderButton(cta: { label: string; url: string }) {
 	return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:28px 0 24px;">
 <tr><td align="center">
 <table role="presentation" cellpadding="0" cellspacing="0">
-<tr><td align="center" bgcolor="${BRAND_COLOR}" style="border-radius:6px;">
+<tr><td align="center" bgcolor="${CTA_COLOR}" style="border-radius:6px;">
 <a href="${url}" target="_blank" style="display:inline-block;padding:13px 32px;font-family:${FONT};font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;border-radius:6px;">${escapeHtml(cta.label)}</a>
 </td></tr>
 </table>
@@ -108,8 +109,11 @@ function render({ to, subject, preheader, heading, greeting, paragraphs, items, 
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light only">
 <title>${escapeHtml(subject)}</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<!--[if !mso]><!-->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<!--<![endif]-->
 <style>:root{color-scheme:light only;supported-color-schemes:light only;}</style>
+<!--[if mso]><style>body,table,td,h1,p,ul,li,a,span,strong{font-family:Arial,Helvetica,sans-serif !important;}</style><![endif]-->
 </head>
 <body style="margin:0;padding:0;background:#FFFFFF;font-family:${FONT};color:${TEXT_COLOR};">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">${escapeHtml(preheader)}&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
@@ -117,10 +121,10 @@ function render({ to, subject, preheader, heading, greeting, paragraphs, items, 
 <tr><td align="center" style="padding:32px 16px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 <tr><td align="center" style="padding:0 0 24px;border-bottom:3px solid ${ACCENT_COLOR};">
-<a href="${escapeHtml(site)}" target="_blank" style="text-decoration:none;"><img src="cid:${LOGO_CID}" width="220" alt="${BRAND}" style="display:block;border:0;outline:none;width:220px;height:auto;max-width:220px;font-family:${DISPLAY};font-size:20px;font-weight:bold;color:${BRAND_COLOR};"></a>
+<a href="${escapeHtml(site)}" target="_blank" style="text-decoration:none;"><img src="cid:${LOGO_CID}" width="220" height="62" alt="${BRAND}" style="display:block;border:0;outline:none;width:220px;height:auto;max-width:220px;font-family:${FONT};font-size:20px;font-weight:bold;color:${BRAND_COLOR};"></a>
 </td></tr>
 <tr><td style="padding:32px 8px 8px;font-size:15px;line-height:1.6;">
-<h1 style="margin:0 0 20px;font-family:${DISPLAY};font-size:26px;line-height:1.25;color:${BRAND_COLOR};font-weight:700;letter-spacing:-0.03em;">${escapeHtml(heading)}</h1>
+<h1 style="margin:0 0 20px;font-family:${FONT};font-size:26px;line-height:1.25;color:${BRAND_COLOR};font-weight:700;letter-spacing:-0.02em;">${escapeHtml(heading)}</h1>
 <p style="margin:0 0 16px;">${escapeHtml(greeting)}</p>
 ${paragraphs.map((p) => `<p style="margin:0 0 16px;">${escapeHtml(p)}</p>`).join("\n")}
 ${items?.length ? renderItems(items) : ""}

@@ -67,7 +67,7 @@ export default function CheckoutPage() {
 							!loading && cart.items.length === 0 ? (
 								<div className="checkout-form">
 									<p className="mb-3">{t("checkout.empty")}</p>
-									<Link href="/courses" className="blue_btn round_btn">
+									<Link href="/courses" className="blue_btn round_btn btn-brand-dark">
 										{t("checkout.browseCourses")}
 									</Link>
 								</div>
@@ -138,7 +138,7 @@ export default function CheckoutPage() {
 
 								<button
 									type="button"
-									className="blue_btn round_btn w100 mt-4"
+									className="blue_btn round_btn btn-brand-dark w100 mt-4"
 									onClick={handleSimulate}
 									disabled={pending}
 								>
@@ -152,7 +152,7 @@ export default function CheckoutPage() {
 								<i className="ph ph-check-circle checkout-success-icon" aria-hidden />
 								<h2>{t("checkout.successTitle")}</h2>
 								<p>{t("checkout.successText")}</p>
-								<Link href="/aluno/cursos" className="blue_btn round_btn">
+								<Link href="/aluno/cursos" className="blue_btn round_btn btn-brand-dark">
 									{t("checkout.goToMyCourses")}
 								</Link>
 							</div>
@@ -183,7 +183,7 @@ export default function CheckoutPage() {
 											{error ? <p className="text-danger">{error}</p> : null}
 											<button
 												type="button"
-												className="blue_btn round_btn w100"
+												className="blue_btn round_btn btn-brand-dark w100"
 												onClick={handleProceed}
 												disabled={pending || loading || cart.items.length === 0}
 											>

@@ -20,12 +20,7 @@ export default function CounterUp({
 	return (
 		<section className={`counter-up position-relative z-1 ${className}`}>
 			<div className="container my-5">
-				<div
-					className="counter_bg"
-					style={{
-						backgroundImage: "url('/assets/img/bg/counter.svg')",
-					}}
-				>
+				<div className="counter_bg">
 					<div className="row">
 						{items.map((item, index) => {
 							const icon = itemText(item, "icon");

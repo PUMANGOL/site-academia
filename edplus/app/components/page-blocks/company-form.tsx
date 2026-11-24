@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useId, useState, useTransition } from "react";
 import { submitCompanyRequest } from "@/app/actions/company-requests";
@@ -59,7 +58,6 @@ export default function CompanyFormBlock({ data }: { data?: BlockData }) {
 						<div className="section-title mb-4">
 							<span>{text("eyebrow")}</span>
 							<h2>{text("title")}</h2>
-							<Image src="/assets/img/shapes/title.svg" alt="" width={216} height={20} />
 						</div>
 						<p className="company-request-lead">{text("lead")}</p>
 						{benefits.length ? (
@@ -81,7 +79,7 @@ export default function CompanyFormBlock({ data }: { data?: BlockData }) {
 									<i className="ph ph-check-circle" aria-hidden />
 									<h3>{t("partners.successTitle")}</h3>
 									<p>{t("partners.successText", { email: sentTo })}</p>
-									<button type="button" className="blue_btn round_btn" onClick={() => setSentTo(null)}>
+									<button type="button" className="blue_btn round_btn btn-brand-dark" onClick={() => setSentTo(null)}>
 										{t("partners.another")}
 									</button>
 								</div>
@@ -175,7 +173,7 @@ export default function CompanyFormBlock({ data }: { data?: BlockData }) {
 										</p>
 									) : null}
 
-									<button type="submit" className="blue_btn round_btn mt-4" disabled={pending}>
+									<button type="submit" className="blue_btn round_btn btn-brand-dark mt-4" disabled={pending}>
 										<span>{pending ? t("partners.sending") : t("partners.submit")}</span>
 										<i className="ph ph-paper-plane-tilt" aria-hidden />
 									</button>

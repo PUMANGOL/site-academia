@@ -125,7 +125,12 @@ export default function PostsTable({ posts }: { posts: PostRow[] }) {
 										<p className="mb-0 fw-medium">
 											{post.titlePt}
 											{post.isFeatured ? (
-												<i className="ph ph-star ms-2 text-warning" title="Destaque" aria-hidden />
+												<i
+													className="ph ph-star ms-2"
+													style={{ color: "var(--rating)" }}
+													title="Destaque"
+													aria-hidden
+												/>
 											) : null}
 										</p>
 										<p className="mb-0 small text-muted">{post.slug}</p>

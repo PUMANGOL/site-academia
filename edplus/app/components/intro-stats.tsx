@@ -70,7 +70,7 @@ export default function IntroStats({ data }: { data?: BlockData }) {
 								{text("eyebrow")}
 							</span>
 							<h2>
-								{text("title")} <span className="ap-hl">{text("highlight")}</span>
+								{text("title")} <span className="ap-hl ap-hl-strong">{text("highlight")}</span>
 							</h2>
 						</div>
 						<p>{text("text")}</p>
@@ -118,7 +118,7 @@ function StatRow({
 		<div className="ap-stat">
 			<span className="disp">
 				{formatPt(value)}
-				<span className="ap-hl">{suffix}</span>
+				<span className="ap-hl ap-hl-strong">{suffix}</span>
 			</span>
 			<span>{label}</span>
 		</div>

@@ -48,7 +48,7 @@ export async function sendMail({ attachments = [], ...message }: MailMessage) {
 		from: process.env.MAIL_FROM || process.env.SMTP_USER,
 		...message,
 		attachments: [
-			{ filename: "pumangol-academy.png", path: logoPath, cid: LOGO_CID },
+			{ filename: "academia-pumangol.png", path: logoPath, cid: LOGO_CID },
 			...attachments,
 		],
 	});

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { useI18n } from "@/app/i18n/I18nProvider";
 
@@ -45,43 +44,25 @@ export default function VideoPlayer({
 			) : null}
 
 			{autoplay ? null : (
-				<>
-					<div className="row g-3 g-md-4 wow fadeInUp">
-						<div className="col-lg-6 col-md-7 align-self-center text-center video_area-title">
-							<h2>
-								{intro ?? t("video.intro")} <br />
-								{intro2 ?? t("video.intro2")}
-							</h2>
-						</div>
-
-						<div className="col-lg-6 col-md-5 align-self-center text-center">
-							<button
-								type="button"
-								className="vplay_btn"
-								aria-label={t("video.play")}
-								onClick={() => setPlaying(true)}
-							>
-								<i className="ph ph-play"></i>
-							</button>
-						</div>
+				<div className="row g-3 g-md-4 wow fadeInUp">
+					<div className="col-lg-6 col-md-7 align-self-center text-center video_area-title">
+						<h2>
+							{intro ?? t("video.intro")} <br />
+							{intro2 ?? t("video.intro2")}
+						</h2>
 					</div>
 
-					<Image
-						src="/assets/img/shapes/dots.svg"
-						alt=""
-						className="dot_shape anileftRight"
-						width={120}
-						height={120}
-					/>
-
-					<Image
-						src="/assets/img/shapes/multiarrow.svg"
-						alt=""
-						className="marrow_shape aniupDown"
-						width={120}
-						height={120}
-					/>
-				</>
+					<div className="col-lg-6 col-md-5 align-self-center text-center">
+						<button
+							type="button"
+							className="vplay_btn"
+							aria-label={t("video.play")}
+							onClick={() => setPlaying(true)}
+						>
+							<i className="ph ph-play"></i>
+						</button>
+					</div>
+				</div>
 			)}
 		</div>
 	);
